@@ -1,0 +1,529 @@
+.trainghiem {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    color: #234b46;
+}
+
+.video {
+    position: relative;
+    min-height: 300px;
+    background: url("images/songhuong.jpg") center / cover;
+}
+
+.video details summary {
+    position: absolute;
+    bottom: 30px;
+    left: 12%;
+    z-index: 1;
+    list-style: none;
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+    text-shadow: 0 1px 4px #000;
+}
+
+.video summary::-webkit-details-marker {
+    display: none;
+}
+
+.video summary span {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background-color: white;
+    color: #234b46;
+    line-height: 34px;
+    text-align: center;
+    text-shadow: none;
+}
+
+.video details[open] summary {
+    top: 8px;
+    bottom: auto;
+    left: 8px;
+    padding: 4px 8px;
+    background-color: #234b46;
+    border-radius: 6px;
+    font-size: 0;
+}
+
+.video details[open] summary span {
+    display: none;
+}
+
+.video details[open] summary::after {
+    content: "✕ Đóng video";
+    font-size: 12px;
+}
+
+.video iframe {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+.lydo {
+    padding: 32px;
+    background-color: #f3ede2;
+}
+
+.lydo .nhan {
+    margin: 0 0 8px;
+    color: #a44435;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.lydo h2 {
+    margin: 0 0 8px;
+    font-family: Georgia, serif;
+    font-size: 24px;
+}
+
+.caclydo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.lydo .gioithieu {
+    margin: 0 0 22px;
+    max-width: 560px;
+    color: #65665e;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.muc {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.bieutuong {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #eadbd0;
+    color: #935342;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bieutuong svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.muc:nth-child(2) .bieutuong {
+    background-color: #e6eee3;
+    color: #426552;
+}
+
+.muc:nth-child(3) .bieutuong {
+    background-color: #eadbd0;
+    color: #935342;
+}
+
+.muc:nth-child(4) .bieutuong {
+    background-color: #e6eee3;
+    color: #426552;
+}
+
+.muc h3 {
+    font-size: 13px;
+    margin: 0 0 6px;
+}
+
+.muc p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #65665e;
+    margin: 0;
+}
+
+@media (max-width: 1000px) {
+    .trainghiem {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    .caclydo {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #234b46;
+    background-color: #fffdf9;
+}
+
+.diemden {
+    padding: 24px 6% 28px;
+    background-color: #fffdf9;
+    color: #234b46;
+}
+
+.diemden .tieude {
+    position: relative;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.tieude .nhan {
+    color: #a44435;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 8px;
+}
+
+.tieude h2 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    margin: 0 0 10px;
+}
+
+.tieude > p:last-of-type {
+    font-size: 13px;
+    color: #65665e;
+    margin: 0;
+}
+
+.xemtatca {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    padding: 9px 16px;
+    border: 1px solid #d9d2c5;
+    border-radius: 20px;
+    color: #a44435;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.danhsach {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.diem {
+    background-color: white;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e5dfd3;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.diem > img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.thongtin {
+    padding: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.thongtin h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+}
+
+.thongtin p {
+    margin: 0 0 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #65665e;
+}
+
+.chandiem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    font-size: 11px;
+    color: #65665e;
+}
+
+.chandiem span::before {
+    content: "●";
+    color: #a44435;
+    margin-right: 5px;
+}
+
+.chandiem a {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #d9d2c5;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: #234b46;
+    font-size: 16px;
+}
+
+.chandiem a:hover,
+.xemtatca:hover {
+    color: white;
+    background-color: #a44435;
+    border-color: #a44435;
+}
+
+@media (max-width: 1100px) {
+    .xemtatca {
+        position: static;
+        display: inline-block;
+        margin-top: 16px;
+    }
+
+    .danhsach {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .danhsach {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 420px) {
+    .danhsach {
+        grid-template-columns: 1fr;
+    }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(35, 75, 70, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px;
+    gap: 24px;
+    background-color: white;
+    color: #234b46;
+}
+
+.thuonghieu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.thuonghieu h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    white-space: nowrap;
+}
+
+.thuonghieu p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+header .logo {
+    width: auto;
+    height: 52px;
+    display: block;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #a44435;
+}
+
+.banner {
+    position: relative;
+    height: 480px;
+    box-sizing: border-box;
+    padding: 40px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    color: white;
+    background-color: #234b46;
+}
+
+.banner .nen {
+    position: absolute;
+    inset: 0;
+    background-image: url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner .nen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15) 45%, transparent 70%);
+}
+
+.banner .noidung {
+    position: relative;
+    z-index: 1;
+    max-width: 340px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.banner input {
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    accent-color: #a44435;
+    cursor: pointer;
+}
+
+#anh1 { left: calc(50% - 26px); }
+#anh2 { left: calc(50% - 6px); }
+#anh3 { left: calc(50% + 14px); }
+
+#anh1:checked ~ .nen,
+#anh2:checked ~ .nen {
+    background-position: center 58%;
+}
+
+#anh2:checked ~ .nen {
+    background-image: url("images/langco.jpg");
+    background-position: center 70%;
+}
+
+#anh3:checked ~ .nen {
+    background-image: url("images/thienmu-rong.jpg");
+    background-position: center 65%;
+}
+
+.banner h2 {
+    margin: 0 0 16px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.banner h2 span {
+    display: block;
+    margin-top: 8px;
+    font-family: Georgia, serif;
+    font-size: 46px;
+    font-weight: bold;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.banner p {
+    max-width: 400px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.banner .nut {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 24px;
+    background-color: #a44435;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.banner .nut:hover {
+    background-color: #803326;
+}
+
+.chuyen {
+    display: none;
+}
+
+#anh1:checked ~ .chuyen1,
+#anh2:checked ~ .chuyen2,
+#anh3:checked ~ .chuyen3 {
+    display: block;
+}
+
+.chuyen label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 30px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.chuyen .truoc { left: 20px; }
+.chuyen .sau { right: 20px; }
+
+.chuyen label:hover {
+    background-color: #a44435;
+}
+
+@media (max-width: 600px) {
+    .banner {
+        padding: 40px 60px;
+    }
+
+    .banner h2 span {
+        font-size: 36px;
+    }
+
+    .chuyen .truoc { left: 10px; }
+    .chuyen .sau { right: 10px; }
+}
