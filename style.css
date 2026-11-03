@@ -482,16 +482,19 @@ body {
 }
 
 /* Header bám đầu màn hình khi cuộn; căn thương hiệu, menu và tìm kiếm. */
+/* Giữ chỗ thanh cuộn để trang ngắn và trang dài không làm Header lệch ngang. */
+html { scrollbar-gutter: stable; }
+
 header {
   position: sticky;
   top: 0;
   z-index: 10;
   box-shadow: 0 2px 8px rgba(35, 75, 70, 0.1);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  /* Cột tìm kiếm vẫn được giữ chỗ ở các trang chỉ có thương hiệu và menu. */
+  grid-template-columns: minmax(0, 1fr) auto 220px;
   align-items: center;
   padding: 8px 40px;
-  flex-wrap: wrap;
   gap: 24px;
   background-color: white;
   color: #234b46;
@@ -501,34 +504,38 @@ header {
 .thuonghieu {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 /* Kiểu chữ và kích thước tên website. */
 .thuonghieu h1 {
   margin: 0;
-  font-family: Georgia, serif;
+  font-family: "Hue Serif", Georgia, serif;
   font-size: 28px;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
 /* Dòng mô tả nhỏ dưới tên website. */
 .thuonghieu p {
-  margin: 4px 0 0;
+  margin: 3px 0 0;
   font-size: 12px;
   line-height: 1.4;
-  color: #5e7069;
+  /* Xanh trầm đậm hơn để slogan dễ đọc trên nền trắng. */
+  color: #465e55;
 }
 
-/* Giới hạn chiều cao logo và giữ đúng tỷ lệ ảnh. */
+/* Logo gọn hơn, giữ tỷ lệ gốc và không bị co khi Header thiếu khoảng trống. */
 header .logo {
   width: auto;
-  height: 52px;
+  height: 48px;
+  flex-shrink: 0;
   display: block;
 }
 
 /* Xếp menu theo hàng ngang và cho phép xuống hàng khi thiếu chỗ. */
 header nav {
+  grid-column: 2;
   display: flex;
   flex-wrap: wrap;
   gap: 4px 24px;
@@ -672,6 +679,7 @@ header nav a:focus-visible {
 /* Máy tính có màn hình vừa: thu khoảng cách Header để hạn chế xuống hàng. */
 @media (max-width: 1200px) and (min-width: 951px) {
   header {
+    grid-template-columns: minmax(0, 1fr) auto 190px;
     gap: 12px;
     padding: 8px 24px;
   }
@@ -686,12 +694,14 @@ header nav a:focus-visible {
 /* Máy tính bảng và điện thoại: xếp các phần Header theo chiều dọc. */
 @media (max-width: 950px) {
   header {
-    flex-direction: column;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
     gap: 4px;
     padding: 8px 20px;
   }
 
   header nav {
+    grid-column: 1;
     justify-content: center;
     gap: 4px 20px;
   }
@@ -720,13 +730,13 @@ header nav a:focus-visible {
   }
 
   .thuonghieu p {
-    max-width: 220px;
+    max-width: none;
     margin-top: 2px;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   header .logo {
-    height: 44px;
+    height: 42px;
   }
 
   header nav {
@@ -939,10 +949,6 @@ header nav a:focus-visible {
   color: #234b46;
 }
 
-.trangdiem header {
-  padding-left: 7%;
-  padding-right: 7%;
-}
 
 .trangdiem .modau {
   box-sizing: border-box;
@@ -1354,13 +1360,6 @@ header nav a:focus-visible {
 }
 
 /* TRANG GIỚI THIỆU: giới hạn CSS trong .tranggt để không đổi trang chủ. */
-/* Giữ đủ chỗ cho menu trên điện thoại như Header trang chủ. */
-@media (max-width: 450px) {
-  .trangdiem header {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
 
 /* TRANG GIỚI THIỆU: định dạng riêng từ đây trở xuống. */
 /* Phông có đủ dấu tiếng Việt được lưu trong dự án, không cần tải khi xem trang. */
@@ -1380,19 +1379,7 @@ header nav a:focus-visible {
   font-display: swap;
 }
 
-/* Căn Header theo cùng lề trái với nội dung, chỉ trên trang Giới thiệu. */
-.tranggt header {
-  padding-left: 8.7%;
-  padding-right: 8.7%;
-  box-sizing: border-box;
-  min-height: 70px;
-}
-
-.tranggt .thuonghieu h1 {
-  font-family: "Hue Serif", Georgia, serif;
-  font-size: 26px;
-  line-height: 1.2;
-}
+/* Header các trang dùng chung định dạng phía trên để menu không xê dịch. */
 
 .tranggt main {
   background-color: #fcfaf6;
@@ -1722,10 +1709,6 @@ header nav a:focus-visible {
 
 /* Máy tính bảng: thu khoảng cách; lịch sử chuyển thành hai cột. */
 @media (max-width: 1000px) {
-  .tranggt header {
-    padding-left: 6%;
-    padding-right: 6%;
-  }
   .tranggt .tongquan {
     gap: 32px;
     padding: 36px 6%;
