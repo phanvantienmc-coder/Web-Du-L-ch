@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Khám phá Đại Nội Huế, Chùa Thiên Mụ, Sông Hương, biển Lăng Cô và Suối Voi." />
+    <title>Địa điểm | Khám phá Huế</title>
+    <!-- Dùng CSS chung, các định dạng mới được giới hạn trong .trangdiem. -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- defer cho JavaScript chạy sau khi HTML sẵn sàng để đổi ảnh thư viện. -->
+    <script src="script.js" defer></script>
+  </head>
+  <body class="trangdiem">
+    <!-- Header dùng cùng logo và menu; đánh dấu Địa điểm là trang đang xem. -->
+    <header>
+      <div class="thuonghieu">
+        <img class="logo" src="images/logo.png" alt="" />
+        <div>
+          <h1>Khám phá Huế</h1>
+          <p>Hành trình văn hóa - Trải nghiệm trọn vẹn</p>
+        </div>
+      </div>
+      <nav aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+        <a href="diadiem.html" aria-current="page">Địa điểm</a>
+        <a href="amthuc.html">Ẩm thực</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Banner: ảnh Đại Nội bên phải, chữ trắng trên lớp tối bên trái. -->
+      <section class="modau" aria-labelledby="ten-trang-diem">
+        <p><a href="index.html">Trang chủ</a> / Địa điểm</p>
+        <h2 id="ten-trang-diem">Khám phá các điểm đến <span>ở Huế</span></h2>
+        <p>Từ di tích lịch sử, danh thắng thiên nhiên đến những vùng đất bình yên, Huế mang đến nhiều trải nghiệm đáng nhớ.</p>
+      </section>
+
+      <!-- Liên kết nội bộ giúp chọn nhanh địa điểm ngay trong trang này. -->
+      <nav class="chonnoi" aria-label="Chọn địa điểm">
+        <a href="#dai-noi">Đại Nội Huế</a>
+        <a href="#chua-thien-mu">Chùa Thiên Mụ</a>
+        <a href="#song-huong">Sông Hương</a>
+        <a href="#bien-lang-co">Biển Lăng Cô</a>
+        <a href="#suoi-voi">Suối Voi</a>
+      </nav>
+
+      <!-- Mỗi id là một đích đến duy nhất cho liên kết neo từ trang chủ. -->
+      <section class="noiden" id="dai-noi" aria-labelledby="ten-dai-noi">
+        <!-- Thư viện Đại Nội Huế: ảnh lớn, hai mũi tên và bốn nút chọn ảnh. -->
+        <figure class="thuvien">
+          <div class="khunganh">
+            <img class="anhchinh" src="images/banner.jpg" alt="Ngọ Môn trong ánh hoàng hôn" width="1200" height="800" />
+            <button class="anhtruoc" type="button" aria-label="Ảnh trước của Đại Nội Huế">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+            </button>
+            <button class="anhsau" type="button" aria-label="Ảnh tiếp theo của Đại Nội Huế">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+            </button>
+          </div>
+          <div class="anhphu" role="group" aria-label="Chọn ảnh Đại Nội Huế">
+            <button type="button" aria-label="Xem ảnh 1: Ngọ Môn trong ánh hoàng hôn" aria-pressed="true" data-mota="Ngọ Môn trong ánh hoàng hôn">
+              <img src="images/banner.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 2: Ngọ Môn với cầu đá và hồ nước" aria-pressed="false" data-mota="Ngọ Môn với cầu đá và hồ nước">
+              <img src="images/ngomon-gioithieu.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 3: Hành lang sơn son và trang trí cung đình" aria-pressed="false" data-mota="Hành lang sơn son và trang trí cung đình">
+              <img src="images/dainoi-hanh-lang.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 4: Không gian bên trong điện Thái Hòa" aria-pressed="false" data-mota="Không gian bên trong điện Thái Hòa">
+              <img src="images/dainoi-thai-hoa.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+          </div>
+          <figcaption aria-live="polite">Ngọ Môn trong ánh hoàng hôn (1/4)</figcaption>
+        </figure>
+        <div>
+          <h2 id="ten-dai-noi">Đại Nội Huế</h2>
+          <p>Đại Nội là nơi tìm hiểu về không gian cung đình của triều Nguyễn. Những cổng thành, mái ngói và sân điện tạo nên một hành trình khám phá kiến trúc, lịch sử của kinh đô xưa.</p>
+          <p>Bước qua Ngọ Môn, bạn có thể dành thời gian quan sát những chi tiết trang trí và cảm nhận sự trang nghiêm của các công trình trong Hoàng thành.</p>
+          <!-- Bốn ô thông tin: icon SVG và nội dung, dùng chung định dạng CSS. -->
+          <div class="thongso">
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-8 8-14a8 8 0 0 0-16 0c0 6 8 14 8 14Z" fill="currentColor" stroke="none"/><circle cx="12" cy="8" r="3" fill="#fffdf9" stroke="none"/></svg>
+              <div><h3>Vị trí</h3><p>Ngọ Môn,<br />trung tâm Huế</p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/></svg>
+              <div><h3>Giờ mở cửa</h3><p>07:00 – 17:00<small>Tham khảo, theo mùa</small></p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 13-6 5 10-13 6-2-4a3 3 0 0 0-2-4L3 9Z"/><path d="m13 5 1 2m1 2 1 2m1 2 1 2"/></svg>
+              <div><h3>Giá vé</h3><p>200.000 VNĐ<small>Người lớn, tham khảo</small></p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z" fill="currentColor" stroke="none"/></svg>
+              <div><h3>Điểm nổi bật</h3><ul>
+                <li>Kiến trúc cung đình độc đáo</li>
+                <li>Không gian lịch sử trang nghiêm</li>
+                <li>Nhiều công trình có giá trị</li>
+              </ul></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="noiden" id="chua-thien-mu" aria-labelledby="ten-thien-mu">
+        <!-- Thư viện Chùa Thiên Mụ: ảnh lớn, hai mũi tên và bốn nút chọn ảnh. -->
+        <figure class="thuvien">
+          <div class="khunganh">
+            <img class="anhchinh" src="images/chuathienmu.jpg" alt="Khuôn viên Chùa Thiên Mụ nhìn từ trên cao" width="1200" height="800" loading="lazy" />
+            <button class="anhtruoc" type="button" aria-label="Ảnh trước của Chùa Thiên Mụ">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+            </button>
+            <button class="anhsau" type="button" aria-label="Ảnh tiếp theo của Chùa Thiên Mụ">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+            </button>
+          </div>
+          <div class="anhphu" role="group" aria-label="Chọn ảnh Chùa Thiên Mụ">
+            <button type="button" aria-label="Xem ảnh 1: Khuôn viên Chùa Thiên Mụ nhìn từ trên cao" aria-pressed="true" data-mota="Khuôn viên Chùa Thiên Mụ nhìn từ trên cao">
+              <img src="images/chuathienmu.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 2: Chùa Thiên Mụ bên dòng sông Hương" aria-pressed="false" data-mota="Chùa Thiên Mụ bên dòng sông Hương">
+              <img src="images/thienmu-rong.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 3: Tháp Phước Duyên và lối vào chùa" aria-pressed="false" data-mota="Tháp Phước Duyên và lối vào chùa">
+              <img src="images/thienmu-thap.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 4: Cổng tam quan Chùa Thiên Mụ" aria-pressed="false" data-mota="Cổng tam quan Chùa Thiên Mụ">
+              <img src="images/thienmu-cong.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+          </div>
+          <figcaption aria-live="polite">Khuôn viên Chùa Thiên Mụ nhìn từ trên cao (1/4)</figcaption>
+        </figure>
+        <div>
+          <h2 id="ten-thien-mu">Chùa Thiên Mụ</h2>
+          <p>Nằm trên đồi Hà Khê bên bờ sông Hương, Chùa Thiên Mụ gắn liền với hình ảnh tháp Phước Duyên bảy tầng. Ngôi chùa là điểm dừng để cảm nhận một Huế thanh bình, trầm mặc.</p>
+          <p>Từ khu vực phía trước chùa, cảnh sông nước mở ra giữa những hàng cây xanh. Không gian phù hợp với một buổi dạo bước chậm rãi và tìm hiểu văn hóa Phật giáo ở Huế.</p>
+          <!-- Bốn ô thông tin: icon SVG và nội dung, dùng chung định dạng CSS. -->
+          <div class="thongso">
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-8 8-14a8 8 0 0 0-16 0c0 6 8 14 8 14Z" fill="currentColor" stroke="none"/><circle cx="12" cy="8" r="3" fill="#fffdf9" stroke="none"/></svg>
+              <div><h3>Vị trí</h3><p>Đồi Hà Khê,<br />đường Kim Long</p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/></svg>
+              <div><h3>Giờ mở cửa</h3><p>Theo lịch nhà chùa<small>Nên ghé ban ngày</small></p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 13-6 5 10-13 6-2-4a3 3 0 0 0-2-4L3 9Z"/><path d="m13 5 1 2m1 2 1 2m1 2 1 2"/></svg>
+              <div><h3>Giá vé</h3><p>Miễn phí<small>Vào tham quan</small></p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z" fill="currentColor" stroke="none"/></svg>
+              <div><h3>Điểm nổi bật</h3><ul>
+                <li>Tháp Phước Duyên bảy tầng</li>
+                <li>Khuôn viên cổ kính, thanh tịnh</li>
+                <li>Khung cảnh sông Hương thơ mộng</li>
+              </ul></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="noiden" id="song-huong" aria-labelledby="ten-song-huong">
+        <!-- Thư viện Sông Hương: ảnh lớn, hai mũi tên và bốn nút chọn ảnh. -->
+        <figure class="thuvien">
+          <div class="khunganh">
+            <img class="anhchinh" src="images/songhuong.jpg" alt="Sông Hương và cầu Trường Tiền lúc chiều xuống" width="1200" height="800" loading="lazy" />
+            <button class="anhtruoc" type="button" aria-label="Ảnh trước của Sông Hương">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+            </button>
+            <button class="anhsau" type="button" aria-label="Ảnh tiếp theo của Sông Hương">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+            </button>
+          </div>
+          <div class="anhphu" role="group" aria-label="Chọn ảnh Sông Hương">
+            <button type="button" aria-label="Xem ảnh 1: Sông Hương và cầu Trường Tiền lúc chiều xuống" aria-pressed="true" data-mota="Sông Hương và cầu Trường Tiền lúc chiều xuống">
+              <img src="images/songhuong.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 2: Thuyền trên sông Hương trong ánh chiều" aria-pressed="false" data-mota="Thuyền trên sông Hương trong ánh chiều">
+              <img src="images/songhuong-thuyen.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 3: Các nhịp cầu Trường Tiền bắc qua sông Hương" aria-pressed="false" data-mota="Các nhịp cầu Trường Tiền bắc qua sông Hương">
+              <img src="images/songhuong-cau.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 4: Cầu Trường Tiền và bờ sông nhìn từ trên cao" aria-pressed="false" data-mota="Cầu Trường Tiền và bờ sông nhìn từ trên cao">
+              <img src="images/songhuong-toancanh.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+          </div>
+          <figcaption aria-live="polite">Sông Hương và cầu Trường Tiền lúc chiều xuống (1/4)</figcaption>
+        </figure>
+        <div>
+          <h2 id="ten-song-huong">Sông Hương</h2>
+          <p>Sông Hương chảy qua thành phố, kết nối những bến nước, cây cầu và không gian di sản. Vẻ đẹp của dòng sông thay đổi theo ánh sáng, từ buổi sáng yên ả đến sắc trời lúc hoàng hôn.</p>
+          <p>Một buổi đi bộ ven sông là cách đơn giản để cảm nhận nhịp sống Huế. Khu vực cầu Trường Tiền là điểm dừng quen thuộc để ngắm cảnh, chụp ảnh và nhìn thành phố lên đèn.</p>
+          <!-- Bốn ô thông tin: icon SVG và nội dung, dùng chung định dạng CSS. -->
+          <div class="thongso">
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-8 8-14a8 8 0 0 0-16 0c0 6 8 14 8 14Z" fill="currentColor" stroke="none"/><circle cx="12" cy="8" r="3" fill="#fffdf9" stroke="none"/></svg>
+              <div><h3>Vị trí</h3><p>Trung tâm Huế,<br />cầu Trường Tiền</p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/></svg>
+              <div><h3>Giờ mở cửa</h3><p>Không có giờ chung<small>Tùy khu vực ven sông</small></p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 13-6 5 10-13 6-2-4a3 3 0 0 0-2-4L3 9Z"/><path d="m13 5 1 2m1 2 1 2m1 2 1 2"/></svg>
+              <div><h3>Giá vé</h3><p>Miễn phí dạo bộ<small>Thuyền, dịch vụ tính riêng</small></p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z" fill="currentColor" stroke="none"/></svg>
+              <div><h3>Điểm nổi bật</h3><ul>
+                <li>Cầu Trường Tiền bên sông</li>
+                <li>Công viên và đường đi bộ</li>
+                <li>Cảnh hoàng hôn, thành phố lên đèn</li>
+              </ul></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="noiden" id="bien-lang-co" aria-labelledby="ten-lang-co">
+        <!-- Thư viện Biển Lăng Cô: ảnh lớn, hai mũi tên và bốn nút chọn ảnh. -->
+        <figure class="thuvien">
+          <div class="khunganh">
+            <img class="anhchinh" src="images/langco.jpg" alt="Toàn cảnh Lăng Cô giữa núi và biển" width="1200" height="800" loading="lazy" />
+            <button class="anhtruoc" type="button" aria-label="Ảnh trước của Biển Lăng Cô">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+            </button>
+            <button class="anhsau" type="button" aria-label="Ảnh tiếp theo của Biển Lăng Cô">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+            </button>
+          </div>
+          <div class="anhphu" role="group" aria-label="Chọn ảnh Biển Lăng Cô">
+            <button type="button" aria-label="Xem ảnh 1: Toàn cảnh Lăng Cô giữa núi và biển" aria-pressed="true" data-mota="Toàn cảnh Lăng Cô giữa núi và biển">
+              <img src="images/langco.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 2: Bãi biển Lăng Cô và những dãy núi xa" aria-pressed="false" data-mota="Bãi biển Lăng Cô và những dãy núi xa">
+              <img src="images/langco-bien.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 3: Cung bờ cát Lăng Cô nhìn từ trên cao" aria-pressed="false" data-mota="Cung bờ cát Lăng Cô nhìn từ trên cao">
+              <img src="images/langco-bocat.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 4: Đầm Lập An gần biển Lăng Cô" aria-pressed="false" data-mota="Đầm Lập An gần biển Lăng Cô">
+              <img src="images/langco-lapan.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+          </div>
+          <figcaption aria-live="polite">Toàn cảnh Lăng Cô giữa núi và biển (1/4)</figcaption>
+        </figure>
+        <div>
+          <h2 id="ten-lang-co">Biển Lăng Cô</h2>
+          <p>Lăng Cô đem đến một sắc thái khác của Huế với bãi cát dài, mặt biển xanh và những dãy núi phía xa. Cảnh quan thoáng rộng phù hợp cho chuyến đi tìm về thiên nhiên và không khí biển.</p>
+          <p>Bạn có thể dạo trên bờ cát, ngắm cảnh từ cung đường ven biển hoặc kết hợp khám phá đầm Lập An gần đó. Vẻ đẹp của Lăng Cô nằm ở sự hòa hợp giữa núi rừng và biển cả.</p>
+          <!-- Bốn ô thông tin: icon SVG và nội dung, dùng chung định dạng CSS. -->
+          <div class="thongso">
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-8 8-14a8 8 0 0 0-16 0c0 6 8 14 8 14Z" fill="currentColor" stroke="none"/><circle cx="12" cy="8" r="3" fill="#fffdf9" stroke="none"/></svg>
+              <div><h3>Vị trí</h3><p>Khu vực Lăng Cô,<br />phía nam Huế</p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/></svg>
+              <div><h3>Giờ mở cửa</h3><p>Tùy khu vực<small>Nên khám phá ban ngày</small></p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 13-6 5 10-13 6-2-4a3 3 0 0 0-2-4L3 9Z"/><path d="m13 5 1 2m1 2 1 2m1 2 1 2"/></svg>
+              <div><h3>Giá vé</h3><p>Tùy khu vực<small>Dịch vụ tính riêng</small></p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z" fill="currentColor" stroke="none"/></svg>
+              <div><h3>Điểm nổi bật</h3><ul>
+                <li>Bãi cát dài, biển xanh</li>
+                <li>Núi và làng chài ven biển</li>
+                <li>Gần đầm Lập An, đèo Hải Vân</li>
+              </ul></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="noiden" id="suoi-voi" aria-labelledby="ten-suoi-voi">
+        <!-- Thư viện Suối Voi: ảnh lớn, hai mũi tên và bốn nút chọn ảnh. -->
+        <figure class="thuvien">
+          <div class="khunganh">
+            <img class="anhchinh" src="images/suoivoi-xanh.jpg" alt="Làn nước trong và cảnh núi rừng tại Suối Voi" width="1200" height="800" loading="lazy" />
+            <button class="anhtruoc" type="button" aria-label="Ảnh trước của Suối Voi">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+            </button>
+            <button class="anhsau" type="button" aria-label="Ảnh tiếp theo của Suối Voi">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+            </button>
+          </div>
+          <div class="anhphu" role="group" aria-label="Chọn ảnh Suối Voi">
+            <button type="button" aria-label="Xem ảnh 1: Làn nước trong và cảnh núi rừng tại Suối Voi" aria-pressed="true" data-mota="Làn nước trong và cảnh núi rừng tại Suối Voi">
+              <img src="images/suoivoi-xanh.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 2: Tảng đá hình voi bên dòng suối" aria-pressed="false" data-mota="Tảng đá hình voi bên dòng suối">
+              <img src="images/suoivoi.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 3: Các khối đá và hồ nước tại Suối Voi" aria-pressed="false" data-mota="Các khối đá và hồ nước tại Suối Voi">
+              <img src="images/suoivoi-dongnuoc.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+            <button type="button" aria-label="Xem ảnh 4: Không gian nghỉ chân bên Suối Voi" aria-pressed="false" data-mota="Không gian nghỉ chân bên Suối Voi">
+              <img src="images/suoivoi-nghichan.jpg" alt="" loading="lazy" width="150" height="100" />
+            </button>
+          </div>
+          <figcaption aria-live="polite">Làn nước trong và cảnh núi rừng tại Suối Voi (1/4)</figcaption>
+        </figure>
+        <div>
+          <h2 id="ten-suoi-voi">Suối Voi</h2>
+          <p>Suối Voi là điểm khám phá thiên nhiên với làn nước trong, những tảng đá lớn và bóng cây xanh. Tên gọi của suối gắn với tảng đá có hình dáng giống một chú voi.</p>
+          <p>Không gian núi rừng đem lại cảm giác thư thái, phù hợp cho một buổi nghỉ chân và ngắm cảnh. Khi di chuyển gần suối, hãy chú ý mặt đá trơn và tuân thủ hướng dẫn tại khu vực tham quan.</p>
+          <!-- Bốn ô thông tin: icon SVG và nội dung, dùng chung định dạng CSS. -->
+          <div class="thongso">
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-8 8-14a8 8 0 0 0-16 0c0 6 8 14 8 14Z" fill="currentColor" stroke="none"/><circle cx="12" cy="8" r="3" fill="#fffdf9" stroke="none"/></svg>
+              <div><h3>Vị trí</h3><p>Khu vực Lộc Tiến,<br />phía nam Huế</p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/></svg>
+              <div><h3>Giờ mở cửa</h3><p>Cần xác nhận<small>Liên hệ trước khi đến</small></p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 13-6 5 10-13 6-2-4a3 3 0 0 0-2-4L3 9Z"/><path d="m13 5 1 2m1 2 1 2m1 2 1 2"/></svg>
+              <div><h3>Giá vé</h3><p>Cần xác nhận<small>Theo đơn vị quản lý</small></p></div>
+            </div>
+            <div class="ochitiet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z" fill="currentColor" stroke="none"/></svg>
+              <div><h3>Điểm nổi bật</h3><ul>
+                <li>Tảng đá hình chú voi</li>
+                <li>Dòng suối và các hồ nhỏ</li>
+                <li>Không gian núi rừng xanh mát</li>
+              </ul></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Chân trang dùng chung: thương hiệu, điều hướng và ghi chú dự án học tập. -->
+    <footer class="chantrang">
+      <div class="dauchan">
+        <div class="hieuchan">
+          <img src="images/logo.png" alt="" width="66" height="44" />
+          <div>
+            <a class="tenweb" href="index.html">Khám phá Huế</a>
+            <p>Hành trình văn hóa - Trải nghiệm trọn vẹn</p>
+          </div>
+        </div>
+        <nav aria-label="Điều hướng cuối trang">
+          <a href="index.html">Trang chủ</a>
+          <a href="gioithieu.html">Giới thiệu</a>
+          <a href="diadiem.html">Địa điểm</a>
+          <a href="amthuc.html">Ẩm thực</a>
+        </nav>
+      </div>
+      <div class="cuoichan">
+        <p>© 2026 Khám phá Huế · Website học tập giới thiệu du lịch Huế.</p>
+        <a href="#">Về đầu trang ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

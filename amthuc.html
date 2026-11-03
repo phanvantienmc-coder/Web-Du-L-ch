@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Khám phá bún bò, bánh Huế, cơm hến và những hương vị đặc trưng của ẩm thực Huế qua ảnh chụp thực tế." />
+    <title>Ẩm thực | Khám phá Huế</title>
+    <!-- Dùng giao diện chung; CSS mới chỉ áp dụng trong .trangamthuc. -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="trangamthuc">
+    <!-- Giữ thương hiệu và menu nhất quán; gạch chân trang Ẩm thực đang xem. -->
+    <header>
+      <div class="thuonghieu">
+        <img class="logo" src="images/logo.png" alt="" />
+        <div>
+          <h1>Khám phá Huế</h1>
+          <p>Hành trình văn hóa - Trải nghiệm trọn vẹn</p>
+        </div>
+      </div>
+      <nav aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+        <a href="diadiem.html">Địa điểm</a>
+        <a href="amthuc.html" aria-current="page">Ẩm thực</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Banner dùng ảnh bún bò chụp thật; nền tối giúp chữ trắng dễ đọc. -->
+      <section class="dauamthuc" aria-labelledby="ten-amthuc">
+        <div>
+          <p class="duongdan"><a href="index.html">Trang chủ</a> / Ẩm thực</p>
+          <h2 id="ten-amthuc">Ẩm thực Huế</h2>
+          <h3>Tinh hoa ẩm thực trong từng hương vị</h3>
+          <p>Ẩm thực Huế không chỉ là món ăn, mà còn là câu chuyện về văn hóa và con người xứ Huế. Từ bát bún nóng đến chiếc bánh nhỏ, mỗi hương vị đều đáng để bạn dừng lại thưởng thức.</p>
+        </div>
+      </section>
+
+      <!-- Các nút lọc chỉ xuất hiện khi JavaScript hoạt động; không tải lại trang. -->
+      <div class="locmon" role="group" aria-label="Lọc theo loại món ăn" hidden>
+        <button type="button" data-loai="tatca" aria-pressed="true">Tất cả</button>
+        <button type="button" data-loai="monchinh" aria-pressed="false">Món chính</button>
+        <button type="button" data-loai="anvat" aria-pressed="false">Món ăn vặt</button>
+        <button type="button" data-loai="banh" aria-pressed="false">Bánh Huế</button>
+        <button type="button" data-loai="douong" aria-pressed="false">Đồ uống</button>
+      </div>
+
+      <section class="monan" id="mon-an" aria-labelledby="ten-mon-an">
+        <div class="daumuc">
+          <h2 id="ten-mon-an">Các món ăn đặc trưng</h2>
+          <p id="dem-mon" role="status">8 hương vị để khám phá</p>
+        </div>
+        <!-- Mỗi món có ảnh thật và details để mở phần giới thiệu bằng chuột hoặc bàn phím. -->
+        <div class="danhsachmon">
+          <article class="themon" data-loai="monchinh">
+            <img src="images/mon-bun-bo.jpg" alt="Bát bún bò nóng được nâng trên tay người phục vụ, ảnh Anh Lê" width="600" height="400" loading="lazy" />
+            <div class="chumon">
+              <h3>Bún bò Huế</h3>
+              <p>Đậm đà, thơm nồng, một hương vị khó quên của xứ Huế.</p>
+              <details><summary><span>Tìm hiểu bún bò Huế</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></summary><p>Nước dùng thơm sả, vị mắm ruốc đặc trưng, ăn cùng bún, thịt bò và rau sống. Bạn có thể thêm ớt tùy khẩu vị.</p></details>
+            </div>
+          </article>
+          <article class="themon" data-loai="banh">
+            <img src="images/mon-banh-beo.jpg" alt="Bánh bèo chén trên mẹt tre, ánh sáng tự nhiên làm nổi màu tôm chấy" width="600" height="400" loading="lazy" />
+            <div class="chumon">
+              <h3>Bánh bèo</h3>
+              <p>Chiếc bánh nhỏ mềm mịn, quyện vị tôm và nước mắm.</p>
+              <details><summary><span>Tìm hiểu bánh bèo</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></summary><p>Bột gạo được hấp thành bánh nhỏ, thêm tôm và mỡ hành. Thưởng thức từng chiếc với nước mắm để cảm nhận vị mềm, bùi và mặn ngọt.</p></details>
+            </div>
+          </article>
+          <article class="themon" data-loai="banh">
+            <img src="images/mon-banh-nam.jpg" alt="Bánh nậm mở trên lá chuối, nhân tôm vàng cam bên chén nước mắm" width="600" height="400" loading="lazy" />
+            <div class="chumon">
+              <h3>Bánh nậm</h3>
+              <p>Mỏng mềm, thơm dịu, nâng niu trong từng lớp lá.</p>
+              <details><summary><span>Tìm hiểu bánh nậm</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></summary><p>Bánh làm từ bột gạo, dàn mỏng cùng nhân tôm thịt, gói trong lá rồi hấp. Bánh ngon khi còn ấm, ăn kèm một chút nước mắm.</p></details>
+            </div>
+          </article>
+          <article class="themon" data-loai="banh">
+            <img src="images/mon-banh-loc.jpg" alt="Mâm bánh lọc trong veo được bày trên đĩa sứ xanh và mẹt tre" width="600" height="400" loading="lazy" />
+            <div class="chumon">
+              <h3>Bánh lọc</h3>
+              <p>Vỏ bánh trong, dai nhẹ, ôm trọn phần nhân đậm vị.</p>
+              <details><summary><span>Tìm hiểu bánh lọc</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></summary><p>Bột năng tạo nên lớp vỏ trong và dai đặc trưng. Nhân thường có tôm và thịt; bánh có thể gói lá hoặc để trần, dùng cùng nước mắm.</p></details>
+            </div>
+          </article>
+          <article class="themon" data-loai="monchinh">
+            <img src="images/mon-com-hen.jpg" alt="Cơm hến đầy đặn trong bát sứ xanh, ăn kèm tóp mỡ và nước hến" width="600" height="400" loading="lazy" />
+            <div class="chumon">
+              <h3>Cơm hến</h3>
+              <p>Mộc mạc mà đậm đà, gắn với nhịp sống ven sông.</p>
+              <details><summary><span>Tìm hiểu cơm hến</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></summary><p>Cơm trộn cùng hến, rau thơm, đậu phộng và các gia vị. Nước hến thường được để riêng, tạo nên bữa ăn dân dã với nhiều lớp hương vị.</p></details>
+            </div>
+          </article>
+          <article class="themon" data-loai="anvat">
+            <img src="images/mon-che-hue.jpg" alt="Chén chè bắp vàng cùng nước cốt dừa, bày bên bẹ bắp xanh" width="600" height="400" loading="lazy" />
+            <div class="chumon">
+              <h3>Chè Huế</h3>
+              <p>Chút ngọt thanh để khép lại một buổi dạo chơi.</p>
+              <details><summary><span>Tìm hiểu chè Huế</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></summary><p>Chè Huế có nhiều loại, từ chè đậu đến chè hạt sen. Ảnh minh họa là chè bắp với nước cốt dừa, có vị ngọt dịu và hương bắp thơm nhẹ.</p></details>
+            </div>
+          </article>
+          <article class="themon" data-loai="anvat">
+            <img src="images/mon-nem-lui.jpg" alt="Mẹt nem lụi nướng vàng cùng rau xanh, bún và nước chấm" width="600" height="400" loading="lazy" />
+            <div class="chumon">
+              <h3>Nem lụi</h3>
+              <p>Thơm lừng trên bếp nướng, ăn cùng rau xanh giòn mát.</p>
+              <details><summary><span>Tìm hiểu nem lụi</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></summary><p>Thịt được quết, nêm gia vị, bọc quanh que rồi nướng. Cuốn nem với bánh tráng, rau sống và chấm nước chấm để thưởng thức.</p></details>
+            </div>
+          </article>
+          <article class="themon" data-loai="douong">
+            <img src="images/mon-ca-phe-muoi.jpg" alt="Ly cà phê muối pha phin trong không gian quán ấm áp tại Huế" width="600" height="400" loading="lazy" />
+            <div class="chumon">
+              <h3>Cà phê muối</h3>
+              <p>Đắng nhẹ, béo dịu và một chút mặn đầy thú vị.</p>
+              <details><summary><span>Tìm hiểu cà phê muối</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></summary><p>Vị cà phê kết hợp cùng sữa và lớp kem muối. Khuấy nhẹ để các lớp hòa quyện rồi nhấp từng ngụm. Ảnh minh họa là cà phê muối pha phin tại Huế.</p></details>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Hai mảng nội dung cuối trang: nét văn hóa và gợi ý trải nghiệm thực tế. -->
+      <section class="vanhoaamthuc" aria-label="Văn hóa và trải nghiệm ẩm thực">
+        <div class="netrieng">
+          <h2>Nét đặc sắc ẩm thực Huế</h2>
+          <p>Từ bữa cơm thường ngày đến những món ăn được chăm chút cầu kỳ, ẩm thực Huế hấp dẫn ở cách nêm nếm, sự khéo léo và lòng hiếu khách của người nấu.</p>
+          <ul><li>Tinh tế trong hương vị</li><li>Đa dạng và phong phú</li><li>Gắn với nếp sống Cố đô</li><li>Mang đậm tình cảm xứ Huế</li></ul>
+        </div>
+        <div class="henamthuc">
+          <h2>Trải nghiệm ẩm thực<br />tại Huế</h2>
+          <p>Dành một buổi dạo chợ Đông Ba, ghé những hàng bánh nhỏ và chậm rãi thưởng thức hương vị địa phương.</p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Ch%E1%BB%A3+%C4%90%C3%B4ng+Ba+Hu%E1%BA%BF" target="_blank" rel="noopener noreferrer">Tìm chợ Đông Ba <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg><span class="chu-an"> (mở bản đồ trong tab mới)</span></a>
+        </div>
+      </section>
+
+      <!-- Ghi công tác giả, giấy phép và nguồn ảnh thực tế; không dùng hình tạo bằng AI. -->
+      <details class="nguonanh">
+        <summary>Nguồn ảnh và tác giả</summary>
+        <p>Ảnh chụp thực tế được tuyển chọn từ các bài giới thiệu ẩm thực và hướng dẫn nấu ăn. Khung hiển thị cắt theo bố cục của trang; quyền ảnh thuộc các tác giả và đơn vị nguồn.</p>
+        <ul>
+          <li>Bún bò, bánh bèo và bánh lọc — ảnh Anh Lê, bộ ảnh <a href="https://news.huengaynay.vn/photos/the-flavors-of-hue-146400.html">Vị Huế / Báo Huế ngày nay</a>.</li>
+          <li>Bánh nậm và cơm hến — <a href="https://khamphahue.com.vn/">Khám phá Huế</a>.</li>
+          <li>Chè bắp — bài <a href="https://mia.vn/cam-nang-du-lich/cac-loai-che-hue-va-nhung-quan-ngon-ma-ban-phai-thu-8818">Các loại chè Huế, MIA.vn</a>.</li>
+          <li>Nem lụi — <a href="https://vnexpress.net/doi-song-cooking-nem-lui-4429186.html">VnExpress Cooking</a>.</li>
+          <li>Cà phê muối — ảnh quán Cà phê muối, bài <a href="https://vnexpress.net/nhung-dia-chi-ca-phe-muoi-ngon-o-hue-4588986.html">VnExpress Du lịch</a>.</li>
+          <li><a href="images/nguon-amthuc-moi.json">Xem đường dẫn nguồn của từng ảnh</a>.</li>
+        </ul>
+        <p>Ảnh sông Hương dùng lại từ thư mục ảnh của website. <a href="https://vietnam.travel/things-to-do/how-eat-local-hue/">Đọc thêm về ẩm thực Huế tại Vietnam Tourism</a>.</p>
+      </details>
+    </main>
+
+    <!-- Chân trang dùng chung: thương hiệu, điều hướng và ghi chú dự án học tập. -->
+    <footer class="chantrang">
+      <div class="dauchan">
+        <div class="hieuchan">
+          <img src="images/logo.png" alt="" width="66" height="44" />
+          <div>
+            <a class="tenweb" href="index.html">Khám phá Huế</a>
+            <p>Hành trình văn hóa - Trải nghiệm trọn vẹn</p>
+          </div>
+        </div>
+        <nav aria-label="Điều hướng cuối trang">
+          <a href="index.html">Trang chủ</a>
+          <a href="gioithieu.html">Giới thiệu</a>
+          <a href="diadiem.html">Địa điểm</a>
+          <a href="amthuc.html">Ẩm thực</a>
+        </nav>
+      </div>
+      <div class="cuoichan">
+        <p>© 2026 Khám phá Huế · Website học tập giới thiệu du lịch Huế.</p>
+        <a href="#">Về đầu trang ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

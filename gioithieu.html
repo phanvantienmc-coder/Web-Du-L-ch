@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu về Huế | Khám phá Huế</title>
+    <meta name="description" content="Tìm hiểu về Huế, vùng đất di sản với lịch sử, văn hóa và con người giàu bản sắc." />
+    <!-- Dùng chung CSS với trang chủ; phần trang này có tên class riêng. -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="tranggt">
+    <!-- Header: giữ logo, tên website và menu đồng bộ với trang chủ. -->
+    <header>
+      <div class="thuonghieu">
+        <img class="logo" src="images/logo.png" alt="" />
+        <div>
+          <h1>Khám phá Huế</h1>
+          <p>Hành trình văn hóa - Trải nghiệm trọn vẹn</p>
+        </div>
+      </div>
+      <!-- Đánh dấu Giới thiệu là trang hiện tại để người xem dễ nhận biết. -->
+      <nav aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="gioithieu.html" aria-current="page">Giới thiệu</a>
+        <a href="diadiem.html">Địa điểm</a>
+        <a href="amthuc.html">Ẩm thực</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Banner thấp: ảnh di tích, đường dẫn về trang chủ và tiêu đề trang. -->
+      <section class="daugt" aria-labelledby="ten-trang">
+        <nav class="duongdan" aria-label="Đường dẫn trang">
+          <a href="index.html">Trang chủ</a><span aria-hidden="true">/</span><span aria-current="page">Giới thiệu</span>
+        </nav>
+        <h2 id="ten-trang">Giới thiệu về Huế</h2>
+        <p>Vùng đất di sản, văn hóa và con người</p>
+      </section>
+
+      <!-- Tổng quan: chữ bên trái, ảnh Ngọ Môn bên phải. -->
+      <section class="tongquan" aria-labelledby="ten-tongquan">
+        <div>
+          <!-- Nhãn và gạch ngắn tạo điểm nhấn giống ảnh tham khảo. -->
+          <p class="nhangt">Tổng quan</p>
+          <h2 id="ten-tongquan">Huế – Kinh đô của những giá trị bền vững</h2>
+          <p>Huế là vùng đất cố đô, từng là kinh đô dưới triều Nguyễn (1802–1945), nơi lưu giữ những giá trị lịch sử, văn hóa và kiến trúc đặc sắc của dân tộc.</p>
+          <p>Không chỉ nổi bật với Quần thể di tích Cố đô Huế, nơi đây còn hấp dẫn bởi dòng sông Hương thơ mộng, nhịp sống thanh bình và con người hiền hòa, mến khách.</p>
+          <p>Ngày nay, Huế đang gìn giữ và phát huy những giá trị truyền thống, đồng thời hướng tới phát triển du lịch bền vững, trở thành điểm đến hấp dẫn của du khách trong và ngoài nước.</p>
+        </div>
+        <figure>
+          <!-- Ảnh minh họa được tạo theo ảnh thiết kế tham khảo. -->
+          <img src="images/ngomon-minhhoa.png" alt="Ảnh minh họa Ngọ Môn với cành cây và bầu trời xanh" />
+          <figcaption>Ngọ Môn – biểu tượng của Quần thể di tích Cố đô Huế</figcaption>
+        </figure>
+      </section>
+
+      <!-- Lịch sử: danh sách các mốc thời gian, đọc từ trái sang phải. -->
+      <section class="lichsu" aria-labelledby="ten-lichsu">
+        <div>
+          <p class="nhangt">Dấu mốc lịch sử</p>
+          <h2 id="ten-lichsu">Hành trình hình thành và phát triển</h2>
+        </div>
+        <ol class="cotmoc">
+          <li>
+            <time datetime="1306">1306</time>
+            <h3>Dấu mốc mở cõi</h3>
+            <p>Hai châu Ô, Lý gia nhập Đại Việt, gắn với công chúa Huyền Trân.</p>
+          </li>
+          <li>
+            <time datetime="1802">1802</time>
+            <h3>Kinh đô triều Nguyễn</h3>
+            <p>Huế trở thành kinh đô, mở đầu thời kỳ phát triển của kiến trúc và văn hóa cung đình.</p>
+          </li>
+          <li>
+            <time datetime="1993">1993</time>
+            <h3>Di sản thế giới</h3>
+            <p>Quần thể di tích Cố đô Huế được UNESCO ghi danh vào Danh sách Di sản thế giới.</p>
+          </li>
+          <li>
+            <span class="thoigian">Hôm nay</span>
+            <h3>Tiếp nối di sản</h3>
+            <p>Huế tiếp tục gìn giữ di sản và hướng tới phát triển du lịch, văn hóa bền vững.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Câu kết do website biên soạn, không gán cho một nhân vật lịch sử. -->
+      <section class="cauket" aria-label="Lời nhắn từ Khám phá Huế">
+        <div>
+          <p>Huế không chỉ là một điểm đến, mà còn là một cảm xúc – nơi thời gian dường như lắng đọng giữa những giá trị xưa và nay.</p>
+          <!-- Đường gạch nhỏ kết thúc lời nhắn, đúng bố cục ảnh tham khảo. -->
+          <span class="gachket" aria-hidden="true"></span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Chân trang dùng chung: thương hiệu, điều hướng và ghi chú dự án học tập. -->
+    <footer class="chantrang">
+      <div class="dauchan">
+        <div class="hieuchan">
+          <img src="images/logo.png" alt="" width="66" height="44" />
+          <div>
+            <a class="tenweb" href="index.html">Khám phá Huế</a>
+            <p>Hành trình văn hóa - Trải nghiệm trọn vẹn</p>
+          </div>
+        </div>
+        <nav aria-label="Điều hướng cuối trang">
+          <a href="index.html">Trang chủ</a>
+          <a href="gioithieu.html">Giới thiệu</a>
+          <a href="diadiem.html">Địa điểm</a>
+          <a href="amthuc.html">Ẩm thực</a>
+        </nav>
+      </div>
+      <div class="cuoichan">
+        <p>© 2026 Khám phá Huế · Website học tập giới thiệu du lịch Huế.</p>
+        <a href="#">Về đầu trang ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

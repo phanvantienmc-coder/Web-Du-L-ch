@@ -1,0 +1,50 @@
+[
+  {
+    "name": "bun-bo",
+    "url": "https://file.huengaynay.vn/data/2/images/2026/01/12/upload_3833/vi-hue-2.jpg",
+    "source": "https://news.huengaynay.vn/photos/the-flavors-of-hue-146400.html",
+    "author": "Anh Le / Hue Today"
+  },
+  {
+    "name": "banh-beo",
+    "url": "https://file.huengaynay.vn/data/2/images/2026/01/12/upload_3833/vi-hue-1.jpg",
+    "source": "https://news.huengaynay.vn/photos/the-flavors-of-hue-146400.html",
+    "author": "Anh Le / Hue Today"
+  },
+  {
+    "name": "banh-loc",
+    "url": "https://file.huengaynay.vn/data/2/images/2026/01/12/upload_3833/vi-hue-5.jpg",
+    "source": "https://news.huengaynay.vn/photos/the-flavors-of-hue-146400.html",
+    "author": "Anh Le / Hue Today"
+  },
+  {
+    "name": "banh-nam",
+    "url": "https://khamphahue.com.vn/Portals/0/DuLich/DiemAnUong/QuanAnDacSan/Top16MonAnHueNgon/Khamphahue_BanhNamHue.jpg",
+    "source": "https://khamphahue.com.vn/Du-lich/Chi-tiet/tid/Top-16-mon-an-khong-nen-bo-qua-khi-den-Hue.html/pid/15268/cid/598",
+    "author": "Kham pha Hue"
+  },
+  {
+    "name": "com-hen",
+    "url": "https://khamphahue.com.vn/Portals/0/Hue24h/AmThuc/2021/AmThucDanGian/Khamphahue_AmThucDanGian_Hue_com-hen.jpg",
+    "source": "https://khamphahue.com.vn/Du-lich/Chi-tiet/tid/Am-thuc-dan-gian-Hue-Don-gian-dan-da-nhung-gay-nhieu-nho-thuong.html/pid/2939/cid/27",
+    "author": "Kham pha Hue"
+  },
+  {
+    "name": "che-hue",
+    "url": "https://mia.vn/media/uploads/blog-du-lich/cac-loai-che-hue-va-nhung-quan-ngon-ma-ban-phai-thu-01-1661195528.jpg",
+    "source": "https://mia.vn/cam-nang-du-lich/cac-loai-che-hue-va-nhung-quan-ngon-ma-ban-phai-thu-8818",
+    "author": "MIA.vn"
+  },
+  {
+    "name": "nem-lui",
+    "url": "https://i1-giadinh.vnecdn.net/2022/02/18/Bc6-1645174454-6720-1645174529.jpg?w=1200&h=675&q=100&dpr=1&fit=crop&s=oXmJ_97RKj-hFXXgrR1gWQ",
+    "source": "https://vnexpress.net/doi-song-cooking-nem-lui-4429186.html",
+    "author": "VnExpress Cooking"
+  },
+  {
+    "name": "ca-phe-muoi",
+    "url": "https://i1-dulich.vnecdn.net/2023/04/03/302568068600785528237020678579-4614-2729-1680535538.jpg?w=1200&h=675&q=100&dpr=1&fit=crop&s=nmFFq-L-iSx602N4JkZNpA",
+    "source": "https://vnexpress.net/nhung-dia-chi-ca-phe-muoi-ngon-o-hue-4588986.html",
+    "author": "Ca phe muoi / VnExpress Du lich"
+  }
+]

@@ -1,529 +1,2253 @@
+/* Chia phần trải nghiệm thành hai cột: video và lý do chọn Huế. */
 .trainghiem {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    color: #234b46;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 24px 6% 40px;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #234b46;
 }
 
+/* Ảnh xem trước của video; làm mốc đặt nút phát và khung video. */
 .video {
-    position: relative;
-    min-height: 300px;
-    background: url("images/songhuong.jpg") center / cover;
+  position: relative;
+  min-height: 420px;
+  background:
+    linear-gradient(0deg, #102e2be6, transparent 75%),
+    url("images/songhuong.jpg") center / cover;
 }
 
+/* Lời dẫn ở chân ảnh, tách khỏi nút phát để người xem nhận ra thao tác chính. */
+.loidanvideo {
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 104px;
+  color: #fffdf9;
+}
+.loidanvideo h2 {
+  max-width: 370px;
+  margin: 0 0 12px;
+  font-family: "Hue Serif", Georgia, serif;
+  font-size: 32px;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+.loidanvideo p {
+  margin: 0;
+  max-width: 360px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Nút mở video đặt trên ảnh xem trước. */
 .video details summary {
-    position: absolute;
-    bottom: 30px;
-    left: 12%;
-    z-index: 1;
-    list-style: none;
-    cursor: pointer;
-    color: white;
-    font-size: 13px;
-    text-shadow: 0 1px 4px #000;
+  position: absolute;
+  bottom: 32px;
+  left: 34px;
+  z-index: 1;
+  list-style: none;
+  cursor: pointer;
+  padding: 5px 18px 5px 5px;
+  border-radius: 28px;
+  background: #fffdf9;
+  color: #234b46;
+  font-size: 13px;
+  text-shadow: none;
+}
+
+.video summary:focus-visible {
+  outline: 2px solid #fffdf9;
+  outline-offset: 5px;
+}
+.video details:not([open]) summary:hover {
+  background: #f0e4d5;
 }
 
 .video summary::-webkit-details-marker {
-    display: none;
+  display: none;
 }
 
 .video summary span {
-    display: inline-block;
-    width: 34px;
-    height: 34px;
-    margin-right: 8px;
-    border-radius: 50%;
-    background-color: white;
-    color: #234b46;
-    line-height: 34px;
-    text-align: center;
-    text-shadow: none;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background-color: #a44435;
+  color: white;
+  line-height: 36px;
+  text-align: center;
+  text-shadow: none;
 }
 
+/* Khi video mở, chuyển nút phát thành nút đóng ở góc trên. */
 .video details[open] summary {
-    top: 8px;
-    bottom: auto;
-    left: 8px;
-    padding: 4px 8px;
-    background-color: #234b46;
-    border-radius: 6px;
-    font-size: 0;
+  top: 8px;
+  bottom: auto;
+  left: 8px;
+  padding: 4px 8px;
+  background-color: #234b46;
+  border-radius: 6px;
+  font-size: 0;
 }
 
 .video details[open] summary span {
-    display: none;
+  display: none;
 }
 
 .video details[open] summary::after {
-    content: "✕ Đóng video";
-    font-size: 12px;
+  content: "✕ Đóng video";
+  font-size: 12px;
 }
 
+/* Cho video nhúng phủ kín khu vực xem. */
 .video iframe {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
-    aspect-ratio: 16 / 9;
-    border: 0;
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  z-index: 1;
 }
 
+/* Nút đóng luôn nằm trên khung video khi người xem mở nội dung. */
+.video details[open] summary {
+  z-index: 2;
+  color: white;
+}
+
+/* Nền và khoảng đệm cho nội dung lý do chọn Huế. */
 .lydo {
-    padding: 32px;
-    background-color: #f3ede2;
+  padding: 38px 36px;
+  background-color: #f5efe5;
 }
 
 .lydo .nhan {
-    margin: 0 0 8px;
-    color: #a44435;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: bold;
-    font-size: 10px;
+  margin: 0 0 8px;
+  color: #a44435;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  font-size: 10px;
 }
 
 .lydo h2 {
-    margin: 0 0 8px;
-    font-family: Georgia, serif;
-    font-size: 24px;
+  margin: 0 0 14px;
+  font-family: "Hue Serif", Georgia, serif;
+  font-size: 29px;
+  line-height: 1.35;
+  text-wrap: balance;
 }
 
+/* Xếp bốn lý do thành lưới hai cột. */
 .caclydo {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 22px;
+  padding-top: 24px;
+  border-top: 1px solid #ded4c6;
 }
 
 .lydo .gioithieu {
-    margin: 0 0 22px;
-    max-width: 560px;
-    color: #65665e;
-    font-size: 12px;
-    line-height: 1.6;
+  margin: 0 0 24px;
+  max-width: 560px;
+  color: #52685f;
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .muc {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
 }
 
+/* Nền tròn và cách căn giữa biểu tượng. */
 .bieutuong {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-color: #eadbd0;
-    color: #935342;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: #eadbd0;
+  color: #935342;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Thống nhất kích thước và độ dày nét của icon SVG. */
 .bieutuong svg {
-    width: 25px;
-    height: 25px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.6;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .muc:nth-child(2) .bieutuong {
-    background-color: #e6eee3;
-    color: #426552;
+  background-color: #e6eee3;
+  color: #426552;
 }
 
 .muc:nth-child(3) .bieutuong {
-    background-color: #eadbd0;
-    color: #935342;
+  background-color: #eadbd0;
+  color: #935342;
 }
 
 .muc:nth-child(4) .bieutuong {
-    background-color: #e6eee3;
-    color: #426552;
+  background-color: #e6eee3;
+  color: #426552;
 }
 
 .muc h3 {
-    font-size: 13px;
-    margin: 0 0 6px;
+  font-family: "Hue Serif", Georgia, serif;
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0 0 6px;
 }
 
 .muc p {
-    font-size: 12px;
-    line-height: 1.5;
-    color: #65665e;
-    margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #52685f;
+  margin: 0;
 }
 
+/* Màn hình nhỏ: đặt video và phần lý do xuống hai hàng. */
 @media (max-width: 1000px) {
-    .trainghiem {
-        grid-template-columns: 1fr;
-    }
+  .trainghiem {
+    grid-template-columns: 1fr;
+  }
+  .trainghiem .video {
+    min-height: 340px;
+  }
 }
 
 @media (max-width: 450px) {
-    .caclydo {
-        grid-template-columns: 1fr;
-    }
-
+  .trainghiem {
+    margin: 20px 5% 28px;
+  }
+  .trainghiem .video {
+    min-height: 300px;
+  }
+  .lydo {
+    padding: 28px 22px;
+  }
+  .lydo h2 {
+    font-size: 25px;
+  }
+  .loidanvideo {
+    left: 24px;
+    right: 24px;
+    bottom: 100px;
+  }
+  .loidanvideo h2 {
+    font-size: 26px;
+  }
+  .video details:not([open]) summary {
+    left: 24px;
+  }
+  .caclydo {
+    grid-template-columns: 1fr;
+  }
 }
 
+/* Định dạng chung: bỏ lề mặc định, chọn phông chữ và màu nền. */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #234b46;
-    background-color: #fffdf9;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #234b46;
+  background-color: #fffdf9;
 }
 
+/* Khoảng đệm, nền và màu chữ của khu vực địa điểm nổi bật. */
 .diemden {
-    padding: 24px 6% 28px;
-    background-color: #fffdf9;
-    color: #234b46;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 34px 6% 32px;
+  background: #faf7f1;
+  color: #234b46;
+}
+
+/* Nền minh họa riêng: Đại Nội bên trái, núi và dòng sông bên phải như ảnh mẫu. */
+.diemden::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* auto giữ đúng tỷ lệ ảnh; phần phía dưới có thể nằm sau các thẻ. */
+  background:
+    linear-gradient(0deg, #faf7f1, transparent 32%),
+    url("images/nen-diemden.png") center -100px / 100% auto no-repeat;
+  pointer-events: none;
+}
+
+/* Điện thoại: giảm độ đậm để họa tiết không cạnh tranh với tiêu đề. */
+@media (max-width: 600px) {
+  .diemden::before {
+    opacity: 0.45;
+    background-size:
+      auto,
+      760px auto;
+    background-position:
+      center,
+      center -40px;
+  }
 }
 
 .diemden .tieude {
-    position: relative;
-    text-align: center;
-    margin-bottom: 18px;
+  position: relative;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 28px;
 }
 
-.tieude .nhan {
-    color: #a44435;
-    font-size: 11px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0 0 8px;
+/* Nhãn đỏ gạch với hai nét mảnh tạo điểm nhấn nhẹ, không thêm hình trang trí. */
+.diemden .tieude .nhan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #a44435;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  line-height: 1.5;
+  margin: 0 0 12px;
 }
 
-.tieude h2 {
-    font-family: Georgia, serif;
-    font-size: 28px;
-    margin: 0 0 10px;
+.diemden .nhan::before,
+.diemden .nhan::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: #c89376;
 }
 
-.tieude > p:last-of-type {
-    font-size: 13px;
-    color: #65665e;
-    margin: 0;
+/* Dùng phông tiêu đề có sẵn, giãn dòng để dấu tiếng Việt không bị chật. */
+.diemden .tieude h2 {
+  font-family: "Hue Serif", Georgia, serif;
+  font-size: clamp(25px, 2.2vw, 32px);
+  line-height: 1.35;
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+  margin: 0 0 12px;
+}
+
+/* Giới hạn chiều dài dòng mô tả và căn giữa dưới tiêu đề. */
+.diemden .tieude > p:last-of-type {
+  max-width: 570px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #5e6b63;
+  text-wrap: balance;
+  margin: 0 auto;
 }
 
 .xemtatca {
-    position: absolute;
-    right: 0;
-    top: 20px;
-    padding: 9px 16px;
-    border: 1px solid #d9d2c5;
-    border-radius: 20px;
-    color: #a44435;
-    font-size: 12px;
-    text-decoration: none;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  padding: 9px 16px;
+  border: 1px solid #d9d2c5;
+  border-radius: 20px;
+  color: #a44435;
+  font-size: 12px;
+  text-decoration: none;
 }
 
+/* Xếp các thẻ địa điểm thành năm cột trên màn hình lớn. */
 .danhsach {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
 }
 
+/* Tạo khung thẻ địa điểm, xếp nội dung theo chiều dọc. */
 .diem {
-    background-color: white;
-    min-width: 0;
-    overflow: hidden;
-    border: 1px solid #e5dfd3;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    display: flex;
-    flex-direction: column;
+  background-color: white;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e5dfd3;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
 }
 
+/* Nền thẻ trơn để ảnh và thông tin địa điểm nổi bật, không lặp họa tiết sóng. */
+.diemden .diem {
+  background: #fffdf9;
+}
+
+/* Giữ ảnh các thẻ cùng kích thước, cắt vừa khung mà không méo. */
 .diem > img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
 }
 
+/* Khoảng đệm và bố cục chữ bên trong thẻ địa điểm. */
 .thongtin {
-    padding: 12px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .thongtin h3 {
-    margin: 0 0 6px;
-    font-size: 15px;
+  margin: 0 0 6px;
+  font-size: 15px;
 }
 
 .thongtin p {
-    margin: 0 0 12px;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #65665e;
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #65665e;
 }
 
+/* Căn vị trí và nút mũi tên ở cuối mỗi thẻ. */
 .chandiem {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-    font-size: 11px;
-    color: #65665e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  font-size: 11px;
+  color: #65665e;
 }
 
 .chandiem span::before {
-    content: "●";
-    color: #a44435;
-    margin-right: 5px;
+  content: "●";
+  color: #a44435;
+  margin-right: 5px;
 }
 
 .chandiem a {
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-    border: 1px solid #d9d2c5;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    color: #234b46;
-    font-size: 16px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid #d9d2c5;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  color: #234b46;
+  font-size: 16px;
 }
 
 .chandiem a:hover,
 .xemtatca:hover {
-    color: white;
-    background-color: #a44435;
-    border-color: #a44435;
+  color: white;
+  background-color: #a44435;
+  border-color: #a44435;
 }
 
+/* Giảm danh sách còn ba cột và đưa nút xem tất cả xuống dưới tiêu đề. */
 @media (max-width: 1100px) {
-    .xemtatca {
-        position: static;
-        display: inline-block;
-        margin-top: 16px;
-    }
+  .xemtatca {
+    position: static;
+    display: inline-block;
+    margin-top: 16px;
+  }
 
-    .danhsach {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .danhsach {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
+/* Màn hình hẹp: hiển thị hai thẻ địa điểm mỗi hàng. */
 @media (max-width: 700px) {
-    .danhsach {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .danhsach {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+/* Điện thoại nhỏ: mỗi hàng chỉ còn một thẻ địa điểm. */
 @media (max-width: 420px) {
-    .danhsach {
-        grid-template-columns: 1fr;
-    }
+  .danhsach {
+    grid-template-columns: 1fr;
+  }
 }
 
+/* Header bám đầu màn hình khi cuộn; căn thương hiệu, menu và tìm kiếm. */
 header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(35, 75, 70, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 40px;
-    gap: 24px;
-    background-color: white;
-    color: #234b46;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(35, 75, 70, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 40px;
+  flex-wrap: wrap;
+  gap: 24px;
+  background-color: white;
+  color: #234b46;
 }
 
+/* Đặt logo và phần chữ thương hiệu cạnh nhau. */
 .thuonghieu {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
+/* Kiểu chữ và kích thước tên website. */
 .thuonghieu h1 {
-    margin: 0;
-    font-family: Georgia, serif;
-    font-size: 28px;
-    white-space: nowrap;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  white-space: nowrap;
 }
 
+/* Dòng mô tả nhỏ dưới tên website. */
 .thuonghieu p {
-    margin: 4px 0 0;
-    font-size: 12px;
-    line-height: 1.4;
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #5e7069;
 }
 
+/* Giới hạn chiều cao logo và giữ đúng tỷ lệ ảnh. */
 header .logo {
-    width: auto;
-    height: 52px;
-    display: block;
+  width: auto;
+  height: 52px;
+  display: block;
 }
 
-nav {
-    display: flex;
-    gap: 24px;
+/* Xếp menu theo hàng ngang và cho phép xuống hàng khi thiếu chỗ. */
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
 }
 
-nav a {
-    color: #000;
-    text-decoration: none;
+/* Màu chữ, vùng bấm và đường viền dành cho từng mục menu. */
+header nav a {
+  display: inline-block;
+  padding: 12px 0;
+  border-bottom: 2px solid transparent;
+  color: #234b46;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
 }
 
-nav a:hover {
-    color: #a44435;
+header nav a:hover,
+/* Gạch chân mục menu của trang hiện tại. */
+header nav a[aria-current="page"] {
+  color: #a44435;
 }
 
+/* Gạch chân mục menu của trang hiện tại. */
+header nav a[aria-current="page"] {
+  border-bottom-color: #a44435;
+}
+
+/* Hiện viền khi chọn menu bằng bàn phím. */
+header nav a:focus-visible {
+  outline: 2px solid #a44435;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Kích thước thanh tìm kiếm và mốc đặt bảng kết quả bên dưới. */
+.timkiem {
+  position: relative;
+  width: 220px;
+  max-width: 100%;
+}
+
+/* Khung bo tròn chứa ô nhập và nút tìm kiếm. */
+.otim {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d9d2c5;
+  border-radius: 24px;
+  background-color: #fffdf9;
+}
+
+/* Làm nổi bật khung tìm kiếm khi người dùng đang thao tác bên trong. */
+.otim:focus-within {
+  outline: 2px solid #a44435;
+  outline-offset: 2px;
+}
+
+/* Định dạng ô nhập từ khóa tìm kiếm. */
+.otim input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  padding: 10px 0 10px 14px;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  color: #234b46;
+}
+
+.otim input::placeholder {
+  color: #5e7069;
+}
+
+/* Kích thước và màu nút kính lúp. */
+.otim button {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #234b46;
+  cursor: pointer;
+}
+
+.otim button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+
+.otim button:hover {
+  color: #a44435;
+}
+
+/* Bảng kết quả tìm kiếm nằm ngay dưới ô nhập. */
+.ketqua {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #d9d2c5;
+  border-radius: 8px;
+  background-color: white;
+  color: #234b46;
+}
+
+.ketqua p {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+.ketqua ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ketqua a {
+  display: block;
+  padding: 12px 4px;
+  color: #234b46;
+  font-size: 14px;
+  text-decoration: none;
+}
+.ketqua a:hover {
+  background-color: #f3ede2;
+  color: #a44435;
+}
+.diem:focus {
+  outline: 2px solid #a44435;
+  outline-offset: 4px;
+}
+.diem {
+  scroll-margin-top: 240px;
+}
+
+/* Máy tính có màn hình vừa: thu khoảng cách Header để hạn chế xuống hàng. */
+@media (max-width: 1200px) and (min-width: 951px) {
+  header {
+    gap: 12px;
+    padding: 8px 24px;
+  }
+  header nav {
+    gap: 4px 14px;
+  }
+  .timkiem {
+    width: 190px;
+  }
+}
+
+/* Máy tính bảng và điện thoại: xếp các phần Header theo chiều dọc. */
+@media (max-width: 950px) {
+  header {
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 20px;
+  }
+
+  header nav {
+    justify-content: center;
+    gap: 4px 20px;
+  }
+
+  header nav a {
+    padding: 10px 4px;
+  }
+
+  .timkiem {
+    width: 300px;
+    margin: 4px 0;
+  }
+}
+
+@media (max-width: 450px) {
+  header {
+    padding: 8px 12px;
+  }
+
+  .thuonghieu {
+    gap: 8px;
+  }
+
+  .thuonghieu h1 {
+    font-size: 24px;
+  }
+
+  .thuonghieu p {
+    max-width: 220px;
+    margin-top: 2px;
+    font-size: 12px;
+  }
+
+  header .logo {
+    height: 44px;
+  }
+
+  header nav {
+    gap: 0 10px;
+  }
+
+  header nav a {
+    font-size: 13px;
+  }
+}
+
+/* Khung Banner: chiều cao, vị trí nội dung và màu chữ. */
 .banner {
-    position: relative;
-    height: 480px;
-    box-sizing: border-box;
-    padding: 40px 9%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    color: white;
-    background-color: #234b46;
+  position: relative;
+  height: 480px;
+  box-sizing: border-box;
+  padding: 40px 9%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: white;
+  background-color: #234b46;
 }
 
+/* Các ảnh nền chồng lên nhau; chuyển opacity để tạo hiệu ứng mờ dần. */
 .banner .nen {
-    position: absolute;
-    inset: 0;
-    background-image: url("images/banner.jpg");
-    background-size: cover;
-    background-position: center;
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
 }
 
+/* Ảnh Đại Nội và vị trí hiển thị trong Banner. */
+.banner .nen1 {
+  background-image: url("images/banner.jpg");
+  background-position: center 58%;
+}
+
+/* Ảnh Lăng Cô và vị trí hiển thị trong Banner. */
+.banner .nen2 {
+  background-image: url("images/langco.jpg");
+  background-position: center 70%;
+}
+
+/* Ảnh Thiên Mụ và vị trí hiển thị trong Banner. */
+.banner .nen3 {
+  background-image: url("images/thienmu-rong.jpg");
+  background-position: center 65%;
+}
+
+/* Lớp phủ tối dần bên trái giúp chữ trắng dễ đọc. */
 .banner .nen::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15) 45%, transparent 70%);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.15) 45%,
+    transparent 70%
+  );
 }
 
+/* Đặt nội dung Banner lên trên các lớp ảnh nền. */
 .banner .noidung {
-    position: relative;
-    z-index: 1;
-    max-width: 340px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+  max-width: 340px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/* Ba nút radio đóng vai trò dấu chấm chọn ảnh. */
 .banner input {
-    position: absolute;
-    bottom: 20px;
-    z-index: 2;
-    width: 12px;
-    height: 12px;
-    margin: 0;
-    accent-color: #a44435;
-    cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  z-index: 2;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  accent-color: #a44435;
+  cursor: pointer;
 }
 
-#anh1 { left: calc(50% - 26px); }
-#anh2 { left: calc(50% - 6px); }
-#anh3 { left: calc(50% + 14px); }
-
-#anh1:checked ~ .nen,
-#anh2:checked ~ .nen {
-    background-position: center 58%;
+/* Đặt ba dấu chấm ở giữa, phía dưới Banner. */
+#anh1 {
+  left: calc(50% - 26px);
+}
+#anh2 {
+  left: calc(50% - 6px);
+}
+#anh3 {
+  left: calc(50% + 14px);
 }
 
-#anh2:checked ~ .nen {
-    background-image: url("images/langco.jpg");
-    background-position: center 70%;
+/* Chỉ làm hiện lớp ảnh tương ứng với radio đang chọn. */
+#anh1:checked ~ .nen1,
+#anh2:checked ~ .nen2,
+#anh3:checked ~ .nen3 {
+  opacity: 1;
 }
 
-#anh3:checked ~ .nen {
-    background-image: url("images/thienmu-rong.jpg");
-    background-position: center 65%;
-}
-
+/* Dòng giới thiệu nhỏ trong tiêu đề Banner. */
 .banner h2 {
-    margin: 0 0 16px;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  margin: 0 0 16px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
+/* Đưa chữ Du lịch Huế xuống dòng và tăng cỡ chữ. */
 .banner h2 span {
-    display: block;
-    margin-top: 8px;
-    font-family: Georgia, serif;
-    font-size: 46px;
-    font-weight: bold;
-    text-transform: none;
-    letter-spacing: 0;
+  display: block;
+  margin-top: 8px;
+  font-family: Georgia, serif;
+  font-size: 46px;
+  font-weight: bold;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .banner p {
-    max-width: 400px;
-    margin: 0 0 20px;
-    font-size: 14px;
-    line-height: 1.6;
+  max-width: 400px;
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
+/* Nút khám phá: màu đỏ gạch, chữ trắng, bo tròn. */
 .banner .nut {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 24px;
-    background-color: #a44435;
-    font-size: 14px;
-    color: white;
-    text-decoration: none;
-    text-shadow: none;
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 24px;
+  background-color: #a44435;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  text-shadow: none;
 }
 
 .banner .nut:hover {
-    background-color: #803326;
+  background-color: #803326;
 }
 
+/* Ẩn các cặp mũi tên không ứng với ảnh đang chọn. */
 .chuyen {
-    display: none;
+  display: none;
 }
 
+/* Hiện cặp mũi tên đúng với ảnh đang xem. */
 #anh1:checked ~ .chuyen1,
 #anh2:checked ~ .chuyen2,
 #anh3:checked ~ .chuyen3 {
-    display: block;
+  display: block;
 }
 
+/* Tạo nút mũi tên tròn ở giữa hai mép Banner. */
 .chuyen label {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    font-size: 30px;
-    line-height: 32px;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 30px;
+  line-height: 32px;
+  cursor: pointer;
 }
 
-.chuyen .truoc { left: 20px; }
-.chuyen .sau { right: 20px; }
+.chuyen .truoc {
+  left: 20px;
+}
+.chuyen .sau {
+  right: 20px;
+}
 
 .chuyen label:hover {
-    background-color: #a44435;
+  background-color: #a44435;
 }
 
+/* Thu chữ và khoảng đệm Banner cho màn hình điện thoại. */
 @media (max-width: 600px) {
-    .banner {
-        padding: 40px 60px;
-    }
+  .banner {
+    padding: 40px 60px;
+  }
 
-    .banner h2 span {
-        font-size: 36px;
-    }
+  .banner h2 span {
+    font-size: 36px;
+  }
 
-    .chuyen .truoc { left: 10px; }
-    .chuyen .sau { right: 10px; }
+  .chuyen .truoc {
+    left: 10px;
+  }
+  .chuyen .sau {
+    right: 10px;
+  }
+}
+
+/* TRANG ĐỊA ĐIỂM: tên class riêng để giữ nguyên giao diện các trang khác. */
+.trangdiem {
+  background-color: #fffdf9;
+  color: #234b46;
+}
+
+.trangdiem header {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.trangdiem .modau {
+  box-sizing: border-box;
+  min-height: 300px;
+  padding: 32px 8%;
+  color: white;
+  /* Đặt ảnh lệch phải, lớp tối bên trái nối ảnh với nền và giúp đọc chữ. */
+  background:
+    linear-gradient(
+      to right,
+      #123034 0%,
+      #123034 40%,
+      rgba(18, 48, 52, 0.85) 48%,
+      rgba(18, 48, 52, 0.15) 72%,
+      transparent 100%
+    ),
+    url("images/banner.jpg") right 47% / auto 175% no-repeat,
+    #243d40;
+}
+
+.trangdiem .modau > p {
+  max-width: 490px;
+  margin: 0 0 18px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.trangdiem .modau > p:first-child {
+  font-size: 14px;
+}
+
+.trangdiem .modau > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Liên kết đường dẫn trong Banner luôn màu trắng, khác liên kết nội dung. */
+.trangdiem .modau a {
+  color: white;
+  text-decoration: none;
+}
+
+.trangdiem .modau a:hover {
+  text-decoration: underline;
+}
+
+.trangdiem .modau h2,
+.trangdiem .noiden h2 {
+  font-family: "Hue Serif", Georgia, serif;
+  font-size: 36px;
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+/* Tiêu đề hai dòng và gạch đỏ gọn như ảnh mẫu. */
+.trangdiem .modau h2 {
+  max-width: 620px;
+  font-size: 42px;
+  line-height: 1.15;
+}
+
+.trangdiem .modau h2 span {
+  display: block;
+}
+
+.trangdiem .modau h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 16px;
+  background-color: #cc6149;
+}
+
+.trangdiem main a {
+  color: #854031;
+  text-underline-offset: 4px;
+}
+
+/* Chọn nhanh bằng liên kết #id, không cần JavaScript. */
+.trangdiem .chonnoi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  padding: 16px 7%;
+  border-bottom: 1px solid #e5dfd3;
+}
+
+.trangdiem .chonnoi a {
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #234b46;
+}
+
+/* Khoảng lùi neo lớn hơn Header để tiêu đề không bị che khi cuộn tới. */
+.trangdiem .noiden {
+  scroll-margin-top: 96px;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 6%;
+  align-items: start;
+  padding: 48px 7%;
+  border-bottom: 1px solid #e5dfd3;
+}
+
+/* Xen kẽ vị trí ảnh trên máy tính, vẫn giữ một thứ tự đọc trên điện thoại. */
+.trangdiem .noiden:nth-of-type(odd) {
+  background-color: #f8f5ee;
+}
+
+.trangdiem .noiden:nth-of-type(odd) figure {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.trangdiem .noiden:nth-of-type(odd) > div {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.trangdiem .noiden figure {
+  min-width: 0;
+  margin: 0;
+}
+
+/* Giữ sẵn tỷ lệ khung ảnh để trang không nhảy vị trí khi ảnh tải xong. */
+.trangdiem .noiden img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.trangdiem figcaption {
+  margin-top: 12px;
+  color: #5e7069;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* THƯ VIỆN ẢNH: các nút được đặt lên hai cạnh ảnh lớn. */
+.trangdiem .khunganh {
+  position: relative;
+}
+
+.trangdiem .khunganh button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e9e0d4;
+  border-radius: 50%;
+  background-color: #fffdf9;
+  color: #234b46;
+  cursor: pointer;
+}
+
+.trangdiem .anhtruoc {
+  left: 12px;
+}
+.trangdiem .anhsau {
+  right: 12px;
+}
+
+.trangdiem .khunganh button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trangdiem .khunganh button:hover {
+  background-color: #a44435;
+  color: white;
+}
+
+/* Bốn ảnh thu nhỏ cùng cỡ; nút có viền đỏ cho biết ảnh đang chọn. */
+.trangdiem .anhphu {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.trangdiem .anhphu button {
+  min-width: 0;
+  overflow: hidden;
+  display: block;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background-color: #f3ede2;
+  cursor: pointer;
+}
+
+.trangdiem .anhphu img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.trangdiem .anhphu button[aria-pressed="true"],
+.trangdiem .anhphu button:hover {
+  border-color: #a44435;
+}
+
+/* Người dùng bàn phím có thể chọn các nút bằng Tab rồi Enter hoặc Space. */
+.trangdiem .thuvien button:focus-visible {
+  outline: 2px solid #a44435;
+  outline-offset: 3px;
+}
+
+.trangdiem .noiden h2 {
+  font-size: 32px;
+}
+
+.trangdiem .noiden h3 {
+  margin: 24px 0 10px;
+  font-size: 16px;
+}
+
+.trangdiem .noiden p,
+.trangdiem .noiden li {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #3f554e;
+}
+
+.trangdiem .noiden p {
+  margin: 0 0 14px;
+}
+
+.trangdiem .noiden ul {
+  margin: 0 0 22px;
+  padding-left: 20px;
+}
+
+.trangdiem .noiden li {
+  margin-bottom: 6px;
+}
+
+/* Bốn ô thông tin xếp ngang: vị trí, giờ mở cửa, giá vé và điểm nổi bật. */
+.trangdiem .thongso {
+  display: grid;
+  grid-template-columns: 0.95fr 1.1fr 1.15fr 1.8fr;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+/* Icon và chữ nằm cạnh nhau, khung viền kem mảnh giống ảnh mẫu. */
+.trangdiem .ochitiet {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 14px 12px;
+  border: 1px solid #e9e0d4;
+  border-radius: 9px;
+  background-color: #fffdf9;
+}
+
+.trangdiem .ochitiet > div {
+  min-width: 0;
+}
+
+/* Các icon SVG dùng cùng cỡ và nét vẽ, không cần thư viện ngoài. */
+.trangdiem .ochitiet svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: #b34430;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trangdiem .ochitiet h3 {
+  margin: 2px 0 8px;
+  color: #a13c2c;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.trangdiem .ochitiet p,
+.trangdiem .ochitiet li {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #45625c;
+}
+
+.trangdiem .ochitiet p {
+  margin: 0;
+}
+
+/* Dòng phụ giải thích loại vé hoặc thời gian tham khảo. */
+.trangdiem .ochitiet small {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  color: #5e7069;
+}
+
+.trangdiem .ochitiet ul {
+  padding-left: 14px;
+  margin: 0;
+}
+
+.trangdiem .ochitiet li {
+  margin-bottom: 4px;
+}
+
+.trangdiem .ochitiet li::marker {
+  color: #b34430;
+}
+
+/* Khi cột nội dung hẹp, cho bốn ô xuống hai hàng để chữ không bị bó lại. */
+@media (max-width: 1200px) {
+  .trangdiem .thongso {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 360px) {
+  .trangdiem .thongso {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Đổi màu tiêu đề khu vực được chọn bằng liên kết neo để dễ nhận biết. */
+.trangdiem .noiden:target h2 {
+  color: #a44435;
+}
+
+.trangdiem a:focus-visible {
+  outline: 2px solid #a44435;
+  outline-offset: 4px;
+}
+
+.trangdiem .nguondiem {
+  padding: 28px 7%;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.trangdiem .nguondiem p {
+  margin: 0 0 14px;
+}
+
+/* Mục về đầu nội dung cũng chừa khoảng cách với Header. */
+.trangdiem #ten-trang-diem {
+  scroll-margin-top: 110px;
+}
+
+@media (max-width: 950px) {
+  /* Header chuyển thành hai hàng ở màn hình hẹp nên tăng khoảng lùi neo. */
+  .trangdiem .noiden,
+  .trangdiem #ten-trang-diem {
+    scroll-margin-top: 180px;
+  }
+
+  .trangdiem .noiden {
+    gap: 30px;
+    padding: 36px 6%;
+  }
+}
+
+@media (max-width: 700px) {
+  .trangdiem .noiden {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .trangdiem .noiden:nth-of-type(odd) figure,
+  .trangdiem .noiden:nth-of-type(odd) > div {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .trangdiem .modau {
+    padding: 28px 6%;
+    /* Tăng lớp tối trên điện thoại vì chữ và ảnh nằm gần nhau hơn. */
+    background-image:
+      linear-gradient(to right, rgba(18, 48, 52, 0.95), rgba(18, 48, 52, 0.65)),
+      url("images/banner.jpg");
+  }
+
+  .trangdiem .modau h2 {
+    font-size: 26px;
+  }
+
+  .trangdiem .noiden h2 {
+    font-size: 28px;
+  }
+}
+
+/* TRANG GIỚI THIỆU: giới hạn CSS trong .tranggt để không đổi trang chủ. */
+/* Giữ đủ chỗ cho menu trên điện thoại như Header trang chủ. */
+@media (max-width: 450px) {
+  .trangdiem header {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* TRANG GIỚI THIỆU: định dạng riêng từ đây trở xuống. */
+/* Phông có đủ dấu tiếng Việt được lưu trong dự án, không cần tải khi xem trang. */
+@font-face {
+  font-family: "Hue Serif";
+  src: url("fonts/NotoSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hue Serif";
+  src: url("fonts/NotoSerif-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Căn Header theo cùng lề trái với nội dung, chỉ trên trang Giới thiệu. */
+.tranggt header {
+  padding-left: 8.7%;
+  padding-right: 8.7%;
+  box-sizing: border-box;
+  min-height: 70px;
+}
+
+.tranggt .thuonghieu h1 {
+  font-family: "Hue Serif", Georgia, serif;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.tranggt main {
+  background-color: #fcfaf6;
+  color: #133f40;
+  /* Phông chữ nội dung rõ dấu tiếng Việt, thống nhất toàn trang Giới thiệu. */
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Banner thấp, ảnh Ngọ Môn và lớp tối bên trái để chữ dễ đọc. */
+.tranggt .daugt {
+  box-sizing: border-box;
+  min-height: 208px;
+  padding: 28px 8.7%;
+  background:
+    linear-gradient(to right, rgba(24, 48, 44, 0.65), rgba(24, 48, 44, 0.06)),
+    url("images/banner-gioithieu.png") center 65% / cover;
+  color: white;
+}
+
+/* Đường dẫn giúp người xem quay lại trang chủ. */
+.tranggt .duongdan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.tranggt .duongdan a {
+  color: white;
+  text-underline-offset: 4px;
+}
+
+.tranggt .daugt h2 {
+  margin: 0 0 10px;
+  font-family: "Hue Serif", Georgia, serif;
+  font-size: 52px;
+  line-height: 1.2;
+}
+
+/* Gạch đỏ nhỏ bên trên tiêu đề Banner như trong bản mẫu. */
+.tranggt .daugt h2::before {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-bottom: 12px;
+  background-color: #d58670;
+}
+
+.tranggt .daugt p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Tổng quan gồm hai cột; khoảng trống rộng giúp các đoạn văn dễ đọc. */
+.tranggt .tongquan {
+  margin: 0 auto;
+  padding: 30px 8.7% 24px;
+  display: grid;
+  grid-template-columns: 1.42fr 1fr;
+  align-items: start;
+  gap: 6%;
+}
+
+/* Nhãn đỏ gạch và đường gạch ngắn dùng theo bố cục mẫu người dùng chọn. */
+.tranggt .nhangt {
+  margin: 0 0 16px;
+  color: #a44435;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.tranggt .nhangt::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-top: 14px;
+  background-color: #a44435;
+}
+
+.tranggt .tongquan h2,
+.tranggt .lichsu h2 {
+  margin: 0 0 14px;
+  font-family: "Hue Serif", Georgia, serif;
+  font-size: 30px;
+  line-height: 1.25;
+  /* Cân độ dài các dòng tiêu đề, tránh một dòng quá ngắn. */
+  text-wrap: initial;
+}
+
+.tranggt .tongquan p {
+  max-width: 610px;
+  margin: 0 0 14px;
+  font-size: 17px;
+  line-height: 1.45;
+  color: #234b46;
+  text-align: left;
+}
+
+/* Giữ nhãn nhỏ, không nhận cỡ chữ của đoạn văn tổng quan. */
+.tranggt .tongquan .nhangt {
+  font-size: 13px;
+  color: #a44435;
+  margin-bottom: 16px;
+}
+
+.tranggt .tongquan p:last-child {
+  margin-bottom: 0;
+}
+
+/* Ảnh tổng quan giữ tỷ lệ ngang; bóng màu kem gợi khung ảnh trong mẫu. */
+.tranggt figure {
+  position: relative;
+  margin: 0;
+  min-width: 0;
+}
+
+/* Hai mảng nền kem lệch nhẹ phía sau ảnh, không cần sửa file ảnh. */
+.tranggt figure::before,
+.tranggt figure::after {
+  content: "";
+  position: absolute;
+  border-radius: 8px;
+  background-color: #f1e7db;
+  pointer-events: none;
+}
+
+.tranggt figure::before {
+  top: 24px;
+  right: -24px;
+  width: 45%;
+  height: 72%;
+}
+
+.tranggt figure::after {
+  bottom: 28px;
+  left: -24px;
+  width: 24%;
+  height: 30%;
+}
+
+.tranggt figure img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.6;
+  object-fit: cover;
+  object-position: center 70%;
+  border-radius: 6px;
+}
+
+.tranggt figcaption {
+  position: relative;
+  z-index: 1;
+  margin-top: 12px;
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+  color: #5e7069;
+}
+
+/* Khối lịch sử: tiêu đề bên trái, danh sách bốn mốc bên phải. */
+.tranggt .lichsu {
+  padding: 28px 6.3%;
+  background-color: #f7f3ec;
+  display: grid;
+  grid-template-columns: 1fr 2.7fr;
+  gap: 28px;
+}
+
+.tranggt .lichsu h2 {
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.tranggt .nguon {
+  font-size: 13px;
+  color: #854031;
+  text-underline-offset: 4px;
+  line-height: 1.6;
+}
+
+/* Đường kẻ và chấm đỏ kết nối các mốc, không cần JavaScript. */
+.tranggt .cotmoc {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 7px;
+}
+
+.tranggt .cotmoc li {
+  position: relative;
+  padding: 0 22px 0 24px;
+}
+
+/* Đường dọc mảnh dưới chấm đỏ giúp các mốc giống ảnh tham khảo. */
+.tranggt .cotmoc li {
+  background: linear-gradient(#e1d3c2, #e1d3c2) 5px 20px / 1px 44px no-repeat;
+}
+
+.tranggt .cotmoc li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #a44435;
+}
+
+.tranggt .cotmoc li::after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 80px;
+  right: 5px;
+  height: 1px;
+  background-color: #dbcebd;
+}
+
+.tranggt .cotmoc li:last-child::after {
+  display: none;
+}
+
+.tranggt time,
+.tranggt .thoigian {
+  font-size: 16px;
+  font-weight: bold;
+  color: #a44435;
+}
+
+.tranggt .cotmoc h3 {
+  /* Chữ có chân cho tên cột mốc đồng bộ với tiêu đề trong ảnh mẫu. */
+  font-family: "Hue Serif", Georgia, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+
+.tranggt .cotmoc p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  color: #4e625c;
+}
+
+/* Câu kết: ảnh di tích rất nhẹ bên trái, lời nhắn màu đỏ gạch bên phải. */
+.tranggt .cauket {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 36px 8.7%;
+  min-height: 168px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.tranggt .cauket::before {
+  content: "";
+  position: absolute;
+  inset: 0 50% 0 0;
+  background: url("images/hoatiet-hue.png") left bottom / cover;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.tranggt .cauket > div {
+  position: relative;
+  width: 48%;
+}
+
+/* Dấu ngoặc mở là chi tiết chữ trang trí, không phải trích dẫn có tác giả. */
+.tranggt .cauket > div::before {
+  content: "“";
+  position: absolute;
+  left: -48px;
+  top: -18px;
+  font-family: "Hue Serif", Georgia, serif;
+  font-size: 70px;
+  line-height: 1;
+  color: #a44435;
+}
+
+.tranggt .cauket p {
+  margin: 0 0 16px;
+  font-family: "Hue Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.5;
+  text-wrap: initial;
+  color: #a44435;
+}
+
+/* Gạch đỏ kết thúc câu cảm nhận, thay cho liên kết không có trong ảnh mẫu. */
+.tranggt .gachket {
+  display: block;
+  width: 36px;
+  height: 1px;
+  margin-top: 18px;
+  background-color: #a44435;
+}
+
+.tranggt .cauket a {
+  color: #234b46;
+  font-size: 14px;
+  text-underline-offset: 5px;
+}
+
+/* Giữ liên kết dễ nhận biết khi điều hướng bằng bàn phím. */
+.tranggt main a:focus-visible {
+  outline: 2px solid #a44435;
+  outline-offset: 4px;
+}
+
+/* Máy tính bảng: thu khoảng cách; lịch sử chuyển thành hai cột. */
+@media (max-width: 1000px) {
+  .tranggt header {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+  .tranggt .tongquan {
+    gap: 32px;
+    padding: 36px 6%;
+  }
+  .tranggt .lichsu {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .tranggt .cotmoc {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .tranggt .cotmoc li::after {
+    display: none;
+  }
+}
+
+/* Điện thoại: xếp chữ, ảnh và dấu mốc theo chiều dọc. */
+@media (max-width: 600px) {
+  .tranggt .daugt {
+    padding: 28px 6%;
+    min-height: 200px;
+  }
+  .tranggt .daugt h2 {
+    font-size: 32px;
+  }
+  .tranggt .tongquan {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-right: 9%;
+  }
+  .tranggt .tongquan h2 {
+    font-size: 26px;
+  }
+  .tranggt .cotmoc {
+    grid-template-columns: 1fr;
+  }
+  .tranggt .cauket {
+    padding: 32px 6%;
+  }
+  .tranggt .cauket > div {
+    width: 100%;
+  }
+  .tranggt .cauket::before {
+    right: 0;
+    opacity: 0.06;
+  }
+  .tranggt .cauket p {
+    font-size: 19px;
+  }
+  .tranggt figure::before {
+    right: -12px;
+  }
+  .tranggt figure::after {
+    left: -12px;
+  }
+  .tranggt .cauket > div::before {
+    display: none;
+  }
+  .tranggt .tongquan p {
+    font-size: 16px;
+  }
+}
+/* TRANG ẨM THỰC: giới hạn CSS mới để các trang khác giữ giao diện hiện tại. */
+.trangamthuc main {
+  background: #fffdf9;
+}
+.trangamthuc main * {
+  box-sizing: border-box;
+}
+.trangamthuc h2,
+.trangamthuc h3 {
+  font-family: "Hue Serif", Georgia, serif;
+}
+.trangamthuc h2 {
+  text-wrap: balance;
+}
+.trangamthuc main p {
+  line-height: 1.65;
+}
+.trangamthuc main ::selection {
+  background: #ead0ba;
+  color: #173f3c;
+}
+.trangamthuc main a:focus-visible,
+.trangamthuc main button:focus-visible,
+.trangamthuc main summary:focus-visible {
+  outline: 2px solid #a44435;
+  outline-offset: 4px;
+}
+.trangamthuc main [hidden] {
+  display: none;
+}
+
+/* Banner: ảnh chụp món ăn bên phải; lớp phủ xanh đậm giữ chữ bên trái rõ ràng. */
+.trangamthuc .dauamthuc {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  padding: 30px 8% 36px;
+  display: flex;
+  align-items: center;
+  color: #fffdf9;
+  background: #102e2b;
+}
+/* Lớp chuyển màu đi theo mép ảnh nên không còn đường cắt dọc giữa ảnh và nền. */
+.trangamthuc .dauamthuc::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 60%;
+  background:
+    linear-gradient(
+      90deg,
+      #102e2b 0%,
+      #102e2bf2 12%,
+      #102e2b80 38%,
+      #102e2b0d 72%
+    ),
+    url("images/mon-bun-bo.jpg") center 56% / cover;
+  pointer-events: none;
+}
+.trangamthuc .dauamthuc > div {
+  position: relative;
+  max-width: 570px;
+}
+.trangamthuc .duongdan {
+  margin: 0 0 16px;
+  font-size: 14px;
+}
+.trangamthuc .duongdan a {
+  color: inherit;
+  text-decoration: none;
+}
+.trangamthuc .duongdan a:hover {
+  text-decoration: underline;
+}
+.trangamthuc .dauamthuc h2 {
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+.trangamthuc .dauamthuc h3 {
+  font-size: 21px;
+  margin: 0;
+}
+.trangamthuc .dauamthuc h3::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin: 18px 0;
+  background: #de8c6c;
+}
+.trangamthuc .dauamthuc p:last-child {
+  margin: 0;
+  max-width: 540px;
+  font-size: 16px;
+}
+
+/* Thanh lọc: nút đang chọn có nền đỏ gạch, các nút còn lại dùng nền kem. */
+.trangamthuc .locmon {
+  display: flex;
+  gap: 4px;
+  max-width: 1260px;
+  margin: 20px auto 0;
+  padding: 5px;
+  border-radius: 32px;
+  background: #f4eee4;
+}
+.trangamthuc .locmon button {
+  flex: 1;
+  min-height: 46px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 26px;
+  background: transparent;
+  color: #234b46;
+  font: inherit;
+  cursor: pointer;
+}
+.trangamthuc .locmon button:hover {
+  background: #eadfd1;
+}
+.trangamthuc .locmon button[aria-pressed="true"] {
+  background: #ab4430;
+  color: #fff;
+}
+
+/* Danh sách món ăn: ảnh cùng tỷ lệ, chữ có khoảng thở, bốn cột trên máy tính. */
+.trangamthuc .monan {
+  padding: 30px 5% 40px;
+  scroll-margin-top: 100px;
+}
+.trangamthuc .daumuc {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.trangamthuc .daumuc h2 {
+  margin: 0;
+  font-size: 28px;
+}
+.trangamthuc .daumuc h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin-top: 12px;
+  background: #ab4430;
+}
+.trangamthuc .daumuc > p {
+  margin: 0;
+  font-size: 14px;
+  color: #5b6e65;
+}
+.trangamthuc .danhsachmon {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px 20px;
+}
+.trangamthuc .themon {
+  border: 1px solid #e9dfd2;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fffdf9;
+}
+.trangamthuc .themon > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.7;
+  object-fit: cover;
+}
+/* Chọn điểm cắt riêng để thấy món ăn thay vì phần nền hoặc chén trống. */
+.trangamthuc .themon > img[src*="banh-beo"] {
+  object-position: center 72%;
+}
+.trangamthuc .themon > img[src*="nem-lui"] {
+  object-position: center 70%;
+}
+.trangamthuc .themon > img[src*="ca-phe-muoi"] {
+  object-position: center 46%;
+}
+.trangamthuc .chumon {
+  position: relative;
+  padding: 15px 16px 18px;
+}
+.trangamthuc .chumon h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+}
+.trangamthuc .chumon > p {
+  min-height: 48px;
+  padding-right: 34px;
+  margin: 0;
+  font-size: 14px;
+  color: #52685f;
+}
+.trangamthuc .chumon summary {
+  position: absolute;
+  right: 12px;
+  top: 60px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #c6b7a5;
+  border-radius: 50%;
+  cursor: pointer;
+  list-style: none;
+}
+.trangamthuc .chumon summary::-webkit-details-marker {
+  display: none;
+}
+.trangamthuc .chumon summary:hover {
+  background: #f4eee4;
+  color: #a44435;
+}
+.trangamthuc .chumon svg,
+.trangamthuc .henamthuc svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.trangamthuc .chumon details[open] summary svg {
+  transform: rotate(90deg);
+}
+.trangamthuc .chumon details > p {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid #e9dfd2;
+  font-size: 14px;
+}
+
+/* Ẩn chữ bằng mắt nhưng giữ tên nút cho trình đọc màn hình. */
+.trangamthuc .chumon summary span,
+.trangamthuc .chu-an {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Phần văn hóa và trải nghiệm: hai mảng lớn giống bố cục ảnh tham khảo. */
+.trangamthuc .vanhoaamthuc {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 16px;
+  padding: 0 5% 26px;
+}
+/* Mẹt bánh lọc chụp thật làm ảnh chìm, thay hình di tích không đúng chủ đề. */
+.trangamthuc .netrieng {
+  position: relative;
+  overflow: hidden;
+  padding: 34px 30px 34px 180px;
+  border-radius: 16px;
+  background: #f4eee4;
+}
+.trangamthuc .netrieng::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 210px;
+  background:
+    linear-gradient(90deg, transparent 30%, #f4eee4 100%),
+    url("images/mon-banh-loc.jpg") center / cover;
+  opacity: 0.25;
+  pointer-events: none;
+}
+/* Đặt chữ phía trên ảnh nền; ảnh chỉ trang trí nên không cản thao tác. */
+.trangamthuc .netrieng > * {
+  position: relative;
+}
+.trangamthuc .netrieng h2 {
+  margin: 0 0 16px;
+  font-size: 28px;
+  color: #923f30;
+}
+.trangamthuc .netrieng p {
+  margin: 0;
+  max-width: 65ch;
+}
+.trangamthuc .netrieng ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+  margin: 26px 0 0;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.trangamthuc .netrieng li::marker {
+  color: #a44435;
+}
+.trangamthuc .henamthuc {
+  padding: 34px;
+  border-radius: 16px;
+  color: #fff;
+  background:
+    linear-gradient(90deg, #102e2bf2, #102e2ba6),
+    url("images/songhuong.jpg") center / cover;
+}
+.trangamthuc .henamthuc h2 {
+  margin: 0 0 14px;
+  font-size: 30px;
+}
+.trangamthuc .henamthuc p {
+  max-width: 410px;
+  margin: 0 0 22px;
+  font-size: 15px;
+}
+.trangamthuc .henamthuc a {
+  display: inline-flex;
+  gap: 14px;
+  align-items: center;
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: 24px;
+  color: white;
+  background: #ab4430;
+  font-size: 14px;
+  text-decoration: none;
+}
+.trangamthuc .henamthuc a:hover {
+  background: #8e3526;
+}
+
+/* Ghi nguồn ảnh gọn ở cuối; mở ra khi người xem muốn tìm tác giả. */
+.trangamthuc .nguonanh {
+  margin: 0 5%;
+  padding: 18px 0 28px;
+  border-top: 1px solid #e9dfd2;
+  font-size: 13px;
+  color: #52685f;
+  line-height: 1.7;
+}
+.trangamthuc .nguonanh summary {
+  cursor: pointer;
+  width: fit-content;
+}
+.trangamthuc .nguonanh a {
+  color: #923f30;
+  overflow-wrap: anywhere;
+  text-underline-offset: 3px;
+}
+
+/* Máy tính bảng: giảm số cột và cho thanh lọc xuống hàng khi cần. */
+@media (max-width: 1100px) {
+  .trangamthuc .locmon {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .trangamthuc .danhsachmon {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .trangamthuc .dauamthuc {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .trangamthuc .vanhoaamthuc {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Điện thoại: một cột dễ đọc, Banner vừa phải và các nút đủ lớn để chạm. */
+@media (max-width: 600px) {
+  .trangamthuc .dauamthuc {
+    min-height: 340px;
+  }
+  .trangamthuc .dauamthuc::before {
+    width: 100%;
+    background-image:
+      linear-gradient(90deg, #102e2bf2, #102e2bbd), url("images/mon-bun-bo.jpg");
+  }
+  .trangamthuc .dauamthuc h3 {
+    font-size: 18px;
+  }
+  .trangamthuc .dauamthuc p:last-child {
+    font-size: 15px;
+  }
+  .trangamthuc .locmon {
+    flex-wrap: wrap;
+    border-radius: 16px;
+  }
+  .trangamthuc .locmon button {
+    flex: 1 1 28%;
+    padding: 10px 6px;
+    font-size: 14px;
+  }
+  .trangamthuc .daumuc {
+    display: block;
+  }
+  .trangamthuc .daumuc h2 {
+    font-size: 24px;
+  }
+  .trangamthuc .daumuc > p {
+    margin-top: 12px;
+  }
+  .trangamthuc .danhsachmon {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .trangamthuc .chumon summary {
+    width: 40px;
+    height: 40px;
+    top: 50px;
+  }
+  .trangamthuc .monan {
+    scroll-margin-top: 180px;
+  }
+  .trangamthuc .netrieng,
+  .trangamthuc .henamthuc {
+    padding: 26px 22px;
+  }
+  .trangamthuc .netrieng::before {
+    width: 100%;
+    opacity: 0.08;
+  }
+  .trangamthuc .netrieng h2,
+  .trangamthuc .henamthuc h2 {
+    font-size: 25px;
+  }
+}
+/* CHÂN TRANG CHUNG: nền xanh trầm, chữ ngà và khoảng cách đồng bộ giữa các trang. */
+.chantrang {
+  padding: 34px 6% 20px;
+  background: #173d38;
+  color: #fffaf1;
+}
+.chantrang * { box-sizing: border-box; }
+.chantrang .dauchan { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.chantrang .hieuchan { display: flex; align-items: center; gap: 14px; }
+/* Đổi logo sang trắng bằng CSS, giữ nguyên file ảnh gốc và tỷ lệ ảnh. */
+.chantrang .hieuchan img { display: block; width: auto; height: 44px; filter: brightness(0) invert(1); }
+.chantrang .tenweb { font-family: "Hue Serif", Georgia, serif; font-size: 25px; line-height: 1.4; }
+.chantrang .hieuchan p { margin: 6px 0 0; color: #d2dfd7; font-size: 12px; line-height: 1.6; }
+.chantrang a { color: inherit; text-decoration: none; text-underline-offset: 5px; }
+.chantrang a:hover { color: #f0c5a4; text-decoration: underline; }
+.chantrang a:focus-visible { outline: 2px solid #f0c5a4; outline-offset: 5px; border-radius: 2px; }
+.chantrang nav { display: flex; flex-wrap: wrap; gap: 8px 26px; }
+.chantrang nav a { padding: 12px 0; font-size: 14px; }
+/* Đường phân cách nhẹ và thông tin cuối, không thêm liên hệ hay mạng xã hội giả. */
+.chantrang .cuoichan { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 26px; padding-top: 18px; border-top: 1px solid #ffffff26; color: #d2dfd7; font-size: 12px; line-height: 1.7; }
+.chantrang .cuoichan p { margin: 0; }
+.chantrang .cuoichan a { padding: 6px 0; white-space: nowrap; }
+/* Điện thoại: xếp các nhóm theo chiều dọc để menu và tên website không bị chật. */
+@media (max-width: 700px) {
+  .chantrang { padding: 28px 6% 18px; }
+  .chantrang .dauchan { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .chantrang .tenweb { font-size: 23px; }
+  .chantrang nav { gap: 6px 22px; }
+  .chantrang .cuoichan { flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 18px; }
 }
